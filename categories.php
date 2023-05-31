@@ -1,15 +1,23 @@
 <?php
 
-session_start();
+$_GET["id"];
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    require("connect.php");
+    $id = strip_tags($_GET['id']);
+    require('close.php');
+}
+
 require("connect.php");
-$sql = "SELECT * FROM categories";
+$sql = "SELECT *
+FROM games
+INNER JOIN categories ON games.cat_name = categories.cat_name
+WHERE categories.id = $id";
 $query = $db->prepare($sql);
 $query->execute();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
+require("close.php");
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,18 +30,22 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-    <a href="disconnect.php">déco</a>
 
     <table>
 
         <?php
         //pour chaque résultat de $result, on affiche une ligne dans le tableau
-        foreach ($result as $categorie) {
+        foreach ($result as $jeu) {
             // print_r($stagiaire);
         ?>
 
             <tr>
-                <td><a href="categories.php?id=<?= $categorie['id'] ?>"><?= $categorie['cat_name'] ?></a></td>
+                <td>
+                    <a href="jeu.php?id=<?= $jeu['game_id'] ?>">
+                        <?= $jeu['game_name'] ?> </a>
+                </td>
+
+
             </tr>
 
         <?php
@@ -41,11 +53,6 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
         ?>
     </table>
-
-
-
-
-    <?php var_dump($_SESSION["user"]); ?>
 </body>
 
 </html>
