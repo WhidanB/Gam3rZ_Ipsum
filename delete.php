@@ -19,6 +19,6 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $_SESSION["Delete"] = [
         "on" => 1
     ];
-    header(('Location: index.php'));
+    header(('Location: backoffice.php'));
     require_once('close.php');
 }

@@ -7,7 +7,7 @@ $query = $db->prepare($sql);
 $query->execute();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-
+$title = "Accueil";
 include "header.php";
 include "navbar.php";
 include "footer.php";
@@ -16,28 +16,22 @@ include "footer.php";
 ?>
 
 
-    <a href="disconnect.php">déco</a>
-    <a href="login.php">Login</a>
-
-    <table>
-
-        <?php
-        //pour chaque résultat de $result, on affiche une ligne dans le tableau
-        foreach ($result as $categorie) {
-            // print_r($stagiaire);
-        ?>
-
-            <tr>
-                <td><a href="categories.php?id=<?= $categorie['id'] ?>"><?= $categorie['cat_name'] ?></a></td>
-            </tr>
-
-        <?php
-        };
-
-        ?>
-    </table>
 
 
+<table>
 
+    <?php
+    //pour chaque résultat de $result, on affiche une ligne dans le tableau
+    foreach ($result as $categorie) {
+        // print_r($stagiaire);
+    ?>
 
-    <?php var_dump($_SESSION["user"]); ?>
+        <tr>
+            <td><a href="categories.php?id=<?= $categorie['id'] ?>"><?= $categorie['cat_name'] ?></a></td>
+        </tr>
+
+    <?php
+    };
+
+    ?>
+</table>

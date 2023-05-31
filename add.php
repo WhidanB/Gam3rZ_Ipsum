@@ -3,7 +3,7 @@ session_start();
 
 if ($_POST) {
     if (
-        isset($_POST['game_name']) && isset($_POST['game_date']) && isset($_POST['game_desc']) && isset($_POST['game_photo']) && isset($_POST['cat_name'])
+        isset($_POST['game_name']) && isset($_POST['game_date']) && isset($_POST['game_desc']) && isset($_POST['game_photo']) && isset($_POST['cate_name'])
 
 
     ) {
@@ -13,23 +13,23 @@ if ($_POST) {
         $game_date = $_POST['game_date'];
         $game_desc = strip_tags($_POST['game_desc']);
         $game_photo = $_POST['game_photo'];
-        $cat_name = $_POST['cat_name'];
+        $cate_name = $_POST['cate_name'];
         $added = DATE('Y/m/d');
         $user_name = $_SESSION["user"]["pseudo"];
-        $sql = "INSERT INTO games (game_name, game_date, game_desc, game_photo, cat_name, added, user_name ) VALUES (:game_name, :game_date, :game_desc, :game_photo, :cat_name, :added, :user_name)";
+        $sql = "INSERT INTO games (game_name, game_date, game_desc, game_photo, cate_name, added, user_name ) VALUES (:game_name, :game_date, :game_desc, :game_photo, :cate_name, :added, :user_name)";
         $query = $db->prepare($sql);
         $query->bindValue(':game_name', $game_name);
         $query->bindValue(':game_date', $game_date);
         $query->bindValue(':game_desc', $game_desc);
         $query->bindValue(':game_photo', $game_photo);
-        $query->bindValue(':cat_name', $cat_name);
+        $query->bindValue(':cate_name', $cate_name);
         $query->bindValue(':added', $added);
         $query->bindValue(':user_name', $user_name);
         var_dump($added);
         var_dump($user_name);
-
         $query->execute();
         require('close.php');
+        header("Location: backoffice.php");
     }
 }
 
@@ -61,8 +61,8 @@ if ($_POST) {
                 <label for="game_photo">Jacquette</label><input name="game_photo" type="text">
                 <div class="select">
 
-                    <label for="cat_name">Catégorie</label>
-                    <select name="cat_name" required>
+                    <label for="cate_name">Catégorie</label>
+                    <select name="cate_name" required>
                         <option value="RPG">RPG</option>
                         <option value="FPS">FPS</option>
                         <option value="MMO">MMO</option>

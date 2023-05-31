@@ -39,7 +39,7 @@ if (!empty($_POST)) {
 
         var_dump($_SESSION);
 
-        // header("Location: index.php");
+        header("Location: backoffice.php");
     }
 }
 
