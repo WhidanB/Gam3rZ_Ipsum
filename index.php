@@ -23,6 +23,7 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <a href="disconnect.php">déco</a>
+    <a href="login.php">Login</a>
 
     <table>
 

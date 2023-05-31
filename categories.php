@@ -10,13 +10,12 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 require("connect.php");
 $sql = "SELECT *
 FROM games
-INNER JOIN categories ON games.cat_name = categories.cat_name
+INNER JOIN categories ON games.cate_name = categories.cat_name
 WHERE categories.id = $id";
 $query = $db->prepare($sql);
 $query->execute();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 require("close.php");
-
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +25,7 @@ require("close.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jeux <?= $result[0]['cate_name'] ?></title>
 </head>
 
 <body>
