@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 31, 2023 at 10:43 AM
+-- Generation Time: Jun 01, 2023 at 11:04 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -56,23 +56,25 @@ CREATE TABLE `games` (
   `game_date` date NOT NULL,
   `game_desc` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `game_photo` varchar(255) NOT NULL,
-  `cat_name` enum('RPG','FPS','MMO','Strategie','Simulation','Survival Horror') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `cate_name` enum('RPG','FPS','MMO','Strategie','Simulation','Survival Horror') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `added` date NOT NULL,
-  `user_name` varchar(255) NOT NULL
+  `user_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `game_cover` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `games`
 --
 
-INSERT INTO `games` (`game_id`, `game_name`, `game_date`, `game_desc`, `game_photo`, `cat_name`, `added`, `user_name`) VALUES
-(2, 'Final Fantasy', '2023-05-18', 'lorem', 'www.lorem.com', 'RPG', '2031-05-23', 'Whidan'),
-(4, 'GTA', '2023-05-17', 'rfgergser', 'tgrthdrhrd', 'RPG', '2031-05-23', 'Whidan'),
-(6, 'LoL', '2023-05-18', 'rfgergser', 'aezferfe', 'Strategie', '2023-05-31', 'Whidan'),
-(7, 'qmiupgvbgipyqerbvi', '2023-05-10', 'rerfergfe', 'tgrtgr', 'Strategie', '2023-05-31', 'Whidan'),
-(8, 'tgrdtgrg', '2023-05-10', 'tsgrtg', 'sgergs', 'Survival Horror', '2023-05-31', 'Whidan'),
-(9, 'sergrtgrd', '2023-05-09', 'drtgbdr', 'dbdfgb', 'Simulation', '2023-05-31', 'Whidan'),
-(10, 'dfgbdfgb', '2023-05-04', 'dfgbdfb', 'dfgbdfgb', 'FPS', '2023-05-31', 'Whidan');
+INSERT INTO `games` (`game_id`, `game_name`, `game_date`, `game_desc`, `game_photo`, `cate_name`, `added`, `user_name`, `game_cover`) VALUES
+(2, 'Final Fantasy', '2023-05-18', 'lorem', 'www.lorem.com', 'RPG', '2031-05-23', 'Whidan', ''),
+(4, 'GTA', '2023-05-17', 'rfgergser', 'tgrthdrhrd', 'RPG', '2031-05-23', 'Whidan', ''),
+(6, 'LoL', '2023-05-18', 'rfgergser', 'aezferfe', 'Strategie', '2023-05-31', 'Whidan', ''),
+(7, 'WoW', '2004-05-18', 'jeu de chômeur', '984166451', 'MMO', '2023-05-31', 'Whidan', ''),
+(11, 'Fortnite', '2023-05-10', 'tour eiffel', 'tgrtgr', 'FPS', '2023-05-31', 'AntoniS', ''),
+(12, 'Eve Online', '2023-05-08', 'Piou piou piou to win', 'avion', 'MMO', '2023-05-31', 'AntoniS', ''),
+(13, 'Fire Emblem', '2023-05-10', 'des épées', '4353', 'RPG', '2023-05-31', 'Zboubi', ''),
+(14, 'Dead Space', '2023-05-15', 'I\'m in space', '8767853', 'Survival Horror', '2023-05-31', 'Zboubi', '');
 
 -- --------------------------------------------------------
 
@@ -85,16 +87,16 @@ CREATE TABLE `users` (
   `user_name` varchar(255) NOT NULL,
   `user_mail` varchar(255) NOT NULL,
   `pass` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `role` enum('user','admin') NOT NULL DEFAULT 'user'
+  `user_role` enum('user','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_name`, `user_mail`, `pass`, `role`) VALUES
+INSERT INTO `users` (`user_id`, `user_name`, `user_mail`, `pass`, `user_role`) VALUES
 (5, 'Whidan', 'x@y.z', '$argon2id$v=19$m=65536,t=4,p=1$QWJ4Tmhma0tER3AuaXFPcA$eimAq9H8rPdXpT7wc29qWzizmiADd3eeMEKIB8KsOTg', 'admin'),
-(6, 'AntoniS', 'y@x.z', '$argon2id$v=19$m=65536,t=4,p=1$ZEpMaUtFUUxyckNtend3Tg$amh3SV1ldasty4w4xxUv6UOQ+zFO2WwvzemsmvZWCf8', 'user');
+(6, 'AntoniS', 'y@x.z', '$argon2id$v=19$m=65536,t=4,p=1$ZEpMaUtFUUxyckNtend3Tg$amh3SV1ldasty4w4xxUv6UOQ+zFO2WwvzemsmvZWCf8', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -132,13 +134,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `games`
 --
 ALTER TABLE `games`
-  MODIFY `game_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `game_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
