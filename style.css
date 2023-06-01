@@ -1,0 +1,9 @@
+.photo {
+  height: 300px;
+}
+
+.photo img {
+  display: block;
+  height: 300px;
+  width: 100%;
+}

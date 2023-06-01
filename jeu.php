@@ -13,7 +13,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     require_once('close.php');
 }
-
+include("header.php");
 ?>
 
 <table>
@@ -31,6 +31,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             <td><?= $jeu['game_date'] ?></td>
             <td><?= $jeu['game_desc'] ?></td>
         </tr>
+        <div class="photo"><img src="<?= $jeu['game_photo'] ?>" alt=""></div>
 
     <?php
     };

@@ -6,7 +6,8 @@ if ($_POST) {
         isset($_POST['game_name']) && isset($_POST['game_date']) && isset($_POST['game_desc']) && isset($_POST['cate_name']) && (isset($_FILES["image"]) && $_FILES["image"]["error"] === 0)
 
 
-    ) {         
+    ) {
+        print_r($_POST);
 
 
 
@@ -15,15 +16,14 @@ if ($_POST) {
 
 
 
-
-                // we have the file
-                // now -> file security
-    // always verify file extension and Mime type
+        // we have the file
+        // now -> file security
+        // always verify file extension and Mime type
         //add any other type files Mime here, and also in /uploads/.htacess
         $allowed = [
             "jpg"  => "image/jpg",
             "jpeg" => "image/jpeg",
-            "png"  => "image/png"            
+            "png"  => "image/png"
         ];
 
         //recover filename
@@ -48,17 +48,17 @@ if ($_POST) {
             die("file too big");
         }
 
-    // NOW create the uploads Folder and his .htaccess
+        // NOW create the uploads Folder and his .htaccess
 
         // generate unique name
         $newname = md5(uniqid());
         // generate path :  __DIR__ = recover path of this php file
-        $newfilename = __DIR__ . "/uploads/$newname.$extension";
+        $newfilename = "./uploads/$newname.$extension";
 
         //move file from temp folder -> ["tmp_name"] of image array, to upload folder ->  /uploads and rename it
-        if(!move_uploaded_file($_FILES["image"]["tmp_name"], $newfilename)){
+        if (!move_uploaded_file($_FILES["image"]["tmp_name"], $newfilename)) {
             die("upload failed");
-        }      
+        }
 
         //644 to forbidden files from execution, can be changed for other permissions
         chmod($newfilename, 0644);
@@ -78,6 +78,7 @@ if ($_POST) {
 
 
         print_r($_POST);
+        print_r($_FILES);
         require('connect.php');
         $game_name = strip_tags($_POST['game_name']);
         $game_date = $_POST['game_date'];
@@ -99,7 +100,7 @@ if ($_POST) {
         var_dump($user_name);
         $query->execute();
         require('close.php');
-        header("Location: backoffice.php");
+        // header("Location: backoffice.php");
     }
 }
 
@@ -122,16 +123,16 @@ if ($_POST) {
 
 
         <h1>Ajouter un jeu</h1>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div>
                 <label for="game_name">Nom du jeu</label><input name="game_name" type="text">
                 <label for="game_date">Date de sortie</label>
                 <input type="date" name="game_date" required>
                 <label for="game_desc">Description</label><input name="game_desc" type="text">
 
-                <label for="fichier">Screenshot</label>           
+                <label for="fichier">Screenshot</label>
                 <input type="file" name="image" id="fichier" required>
-               
+
                 <div class="select">
 
                     <label for="cate_name">Catégorie</label>
