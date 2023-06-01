@@ -34,7 +34,7 @@ if (!empty($_POST)) {
             "id" => $user["user_id"],
             "pseudo" => $user["user_name"],
             "email" => $user["user_mail"],
-            "role" => $user["role"]
+            "role" => $user["user_role"]
         ];
 
         var_dump($_SESSION);

@@ -25,13 +25,15 @@ if (!empty($_POST)) {
         $query->execute();
 
         $id = $db->lastInsertId();
+        $role = "user";
 
 
 
         $_SESSION["user"] = [
             "id" => $id,
             "pseudo" => $pseudo,
-            "email" => $_POST["user_mail"]
+            "email" => $_POST["user_mail"],
+            "role" => $role
         ];
 
         header("Location: index.php");

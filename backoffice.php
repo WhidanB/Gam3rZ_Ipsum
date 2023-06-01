@@ -8,13 +8,14 @@ if (!isset($_SESSION["user"])) {
 } else {
 
     require("connect.php");
-    if ($_SESSION["user"]["role"] = "admin") {
+    if ($_SESSION["user"]["role"] == "admin") {
         $sql = "SELECT * FROM games";
         $query = $db->prepare($sql);
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        echo "<a href='users.php'>Utilisateurs</a>";
     } else
-    if ($_SESSION["user"]["role"] = "user") {
+    if ($_SESSION["user"]["role"] == "user") {
         $name = $_SESSION["user"]["pseudo"];
         $sql = "SELECT * FROM games WHERE user_name = '$name'";
         $query = $db->prepare($sql);
@@ -33,16 +34,19 @@ if (!isset($_SESSION["user"])) {
 <a href="add.php">Ajouter un jeu</a>
 
 
-<table>
 
+
+<table>
+    <th>Jeu</th>
+    <th>Ajouté par</th>
+    <th>Actions</th>
     <?php
-    //pour chaque résultat de $result, on affiche une ligne dans le tableau
     foreach ($result as $jeu) {
-        // print_r($stagiaire);
     ?>
 
         <tr>
             <td><?= $jeu["game_name"] ?></td>
+            <td><?= $jeu["user_name"] ?></td>
             <td>
 
                 <a href="edit.php?id=<?= $jeu['game_id'] ?>" class="modif">
