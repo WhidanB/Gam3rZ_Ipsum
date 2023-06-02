@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 01, 2023 at 11:04 AM
+-- Generation Time: Jun 02, 2023 at 11:07 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -29,20 +29,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categories` (
   `id` int NOT NULL,
-  `cat_name` varchar(255) NOT NULL
+  `cat_name` varchar(255) NOT NULL,
+  `cat_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `cat_name`) VALUES
-(3, 'RPG'),
-(4, 'FPS'),
-(5, 'MMO'),
-(6, 'Strategie'),
-(7, 'Simulation'),
-(8, 'Survival Horror');
+INSERT INTO `categories` (`id`, `cat_name`, `cat_photo`) VALUES
+(3, 'RPG', './assets/zelda.jpg'),
+(4, 'FPS', './assets/fps.jpg'),
+(5, 'MMO', './assets/mmo.jpg'),
+(6, 'Strategie', './assets/strategie.jpg'),
+(7, 'Simulation', './assets/simulation.jpg'),
+(8, 'Survival Horror', './assets/survivalhorror.jpg');
 
 -- --------------------------------------------------------
 
@@ -59,7 +60,7 @@ CREATE TABLE `games` (
   `cate_name` enum('RPG','FPS','MMO','Strategie','Simulation','Survival Horror') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `added` date NOT NULL,
   `user_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `game_cover` varchar(255) NOT NULL
+  `game_cover` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -74,7 +75,8 @@ INSERT INTO `games` (`game_id`, `game_name`, `game_date`, `game_desc`, `game_pho
 (11, 'Fortnite', '2023-05-10', 'tour eiffel', 'tgrtgr', 'FPS', '2023-05-31', 'AntoniS', ''),
 (12, 'Eve Online', '2023-05-08', 'Piou piou piou to win', 'avion', 'MMO', '2023-05-31', 'AntoniS', ''),
 (13, 'Fire Emblem', '2023-05-10', 'des épées', '4353', 'RPG', '2023-05-31', 'Zboubi', ''),
-(14, 'Dead Space', '2023-05-15', 'I\'m in space', '8767853', 'Survival Horror', '2023-05-31', 'Zboubi', '');
+(14, 'Dead Space', '2023-05-15', 'I\'m in space', '8767853', 'Survival Horror', '2023-05-31', 'Zboubi', ''),
+(16, 'GTA 2', '2023-06-14', 'lorem', './uploads/86a9dc43ec3ac1f64a5e0663385ff381.png', 'FPS', '2023-06-01', 'Whidan', NULL);
 
 -- --------------------------------------------------------
 
@@ -134,7 +136,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `games`
 --
 ALTER TABLE `games`
-  MODIFY `game_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `game_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `users`

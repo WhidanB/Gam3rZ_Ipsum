@@ -1,9 +1,90 @@
-.photo {
-  height: 300px;
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Electrolize&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.photo img {
-  display: block;
-  height: 300px;
+body {
+  box-sizing: border-box;
+  position: relative;
+}
+
+header {
   width: 100%;
+  top: 50px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  height: 50px;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 20px;
+}
+
+video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  z-index: -1;
+}
+
+h1 {
+  font-family: "Electrolize";
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  color: #fff;
+  background: rgba(255, 255, 255, 0);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.categorie {
+  text-align: center;
+  height: 150px;
+  width: 300px;
+}
+.categorie:hover {
+  scale: 1.1;
+}
+
+.categorie a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 32px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.link-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(1px);
+}
+
+.cate-container {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 10px;
 }
