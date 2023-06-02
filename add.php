@@ -5,9 +5,9 @@ if ($_POST) {
     if (
         isset($_POST['game_name']) && isset($_POST['game_date']) && isset($_POST['game_desc']) && isset($_POST['cate_name']) && isset($_FILES["image"]) && count($_FILES["image"]["tmp_name"]) >= 2
     ) {
-        echo "<pre>";
-        var_dump($_FILES);
-        echo "</pre>";
+        //echo "<pre>";
+        //var_dump($_FILES);
+        //echo "</pre>";
         
         // file screenshot process
         $file1 = $_FILES["image"]["tmp_name"][0];
