@@ -10,9 +10,6 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
 $title = "Accueil";
 
 include "navbar.php";
-
-var_dump($_SESSION);
-
 ?>
 
 <!DOCTYPE html>
@@ -63,4 +60,4 @@ var_dump($_SESSION);
         </div>
     </section>
 
-    <?= include "footer.php"; ?>
+    <?php include_once("footer.php"); ?>
