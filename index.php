@@ -10,8 +10,8 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
 $title = "Accueil";
 
 include "navbar.php";
-include "footer.php";
 
+var_dump($_SESSION);
 
 ?>
 
@@ -27,17 +27,20 @@ include "footer.php";
 </head>
 
 <body>
+    <section class="section1">
+        <video autoplay loop muted>
+            <source src="./assets/main.mp4">
+        </video>
 
 
-    <h1>LOREM SES MORTS</h1>
-    <video autoplay loop muted>
-        <source src="./assets/main.mp4">
-    </video>
+        <h1>La sélection des meilleurs jeux, par des geeks, pour des g33ks.</h1>
+
+    </section>
 
 
 
 
-    <section>
+    <section class="section2">
         <h2>Les catégories</h2>
         <div class="cate-container">
 
@@ -59,3 +62,5 @@ include "footer.php";
             ?>
         </div>
     </section>
+
+    <?= include "footer.php"; ?>

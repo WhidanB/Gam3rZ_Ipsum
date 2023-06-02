@@ -8,7 +8,7 @@
 
 body {
   box-sizing: border-box;
-  position: relative;
+  background-color: #f6f6f6;
 }
 
 header {
@@ -22,7 +22,8 @@ header {
 }
 
 nav {
-  height: 50px;
+  border-radius: 15px;
+  height: 70px;
   width: 60%;
   display: flex;
   flex-direction: row;
@@ -30,34 +31,54 @@ nav {
   align-items: center;
   background-color: #fff;
   padding: 0 20px;
+  z-index: 5;
+  box-shadow: -12px 11px 15px -5px rgba(0, 0, 0, 0.61);
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  background-color: red;
+  font-family: "Dela Gothic One";
+  padding: 5px 10px;
+  border-radius: 5px;
+  letter-spacing: 1px;
 }
 
 video {
-  height: 100vh;
+  height: auto;
   width: 100vw;
   object-fit: cover;
-  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
 h1 {
   font-family: "Electrolize";
-  position: absolute;
-  top: 25%;
-  left: 15%;
+  font-size: 48px;
+  text-align: left;
   color: #fff;
   background: rgba(255, 255, 255, 0);
+  z-index: 2;
+  padding-right: 30%;
+  padding-left: 3%;
+  width: 60%;
 }
 
-section {
+.section1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 .categorie {
   text-align: center;
-  height: 150px;
-  width: 300px;
+  height: 200px;
 }
 .categorie:hover {
   scale: 1.1;
@@ -86,5 +107,91 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  row-gap: 10px;
+  gap: 20px;
+}
+.section2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-top: 40px;
+}
+
+h2 {
+  font-family: "Electrolize";
+  font-size: 32px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #fff;
+  height: 150px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.footer-left a {
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: #fff;
+  background-color: red;
+  font-family: "Dela Gothic One";
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.footer-left p {
+  color: gray;
+  font-family: "Electrolize";
+}
+
+.footer-center ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: "Electrolize";
+  list-style-type: none;
+  height: 100%;
+  font-size: 24px;
+  color: #000;
+}
+
+.footer-center li a {
+  text-decoration: none;
+}
+
+.footer-center li a:visited {
+  color: #000;
+}
+
+.footer-right {
+  font-size: 24px;
+  font-family: "Electrolize";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.footer-right a {
+  color: gray;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 120%;
+}
+
+.icons img {
+  height: 30px;
+  width: 30px;
 }
