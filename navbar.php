@@ -1,6 +1,6 @@
 <header>
     <nav>
-        <a href="index.php">G@m3rZ Ipsum</a>
+        <a class="logo" href="index.php">G@m3rZ Ipsum</a>
         <div>
 
             <?php

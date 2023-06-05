@@ -35,14 +35,18 @@ nav {
     box-shadow: -12px 11px 15px -5px rgba(0, 0, 0, 0.61);
 }
 
+.logo {
+  font-family: "Road Rage";
+}
 nav a {
-    text-decoration: none;
-    color: #fff;
-    background-color: red;
-    font-family: "Dela Gothic One";
-    padding: 5px 10px;
-    border-radius: 5px;
-    letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Electrolize";
+  background-color: red;
+  padding: 5px 10px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 
 video {
@@ -70,8 +74,6 @@ video {
     width: 60%;
 }
 
-
-
 .section1 {
     display: flex;
     flex-direction: column;
@@ -89,13 +91,13 @@ video {
     scale: 1.1;
 }
 
-.categorie a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 32px;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-        1px 1px 0 #000;
+.cate-container a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 32px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .link-container {
@@ -130,12 +132,14 @@ h2 {
 }
 
 footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: #fff;
-    height: 150px;
-    box-shadow: 0px 14px 24px 20px rgba(255, 0, 0, 0.27);
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #fff;
+  height: 150px;
+  box-shadow: 0px 14px 24px 20px rgba(255, 0, 0, 0.27);
 }
 
 .footer-left {
@@ -270,11 +274,10 @@ footer {
     justify-content: center;
 }
 
-
-
 /* REGISTER PAGE */
 
 .form-box {
+  z-index: 2;
     z-index: 2; 
     margin-right: 35%;   
     width: 350px;

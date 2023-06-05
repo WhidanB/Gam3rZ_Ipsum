@@ -39,6 +39,7 @@ if (!isset($_SESSION["user"])) {
             <thead>
 
                 <th class="p-2 text-center border border-black text-white bg-dark">Jeu</th>
+                <th class="p-2 text-center border border-black text-white bg-dark">Catégorie</th>
                 <th class="p-2 text-center border border-black text-white bg-dark">Ajouté par</th>
                 <th class="p-2 text-center border border-black text-white bg-dark">Actions</th>
             </thead>
@@ -48,6 +49,7 @@ if (!isset($_SESSION["user"])) {
 
                 <tr>
                     <td class="px-2 text-center border border-black"><?= $jeu["game_name"] ?></td>
+                    <td class="px-2 text-center border border-black"><?= $jeu["cate_name"] ?></td>
                     <td class="px-2 text-center border border-black"><?= $jeu["user_name"] ?></td>
                     <td class="text-center border border-black">
                         <div class="btn-group">
