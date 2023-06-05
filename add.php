@@ -8,7 +8,7 @@ if ($_POST) {
         //echo "<pre>";
         //var_dump($_FILES);
         //echo "</pre>";
-        
+
         // file screenshot process
         $file1 = $_FILES["image"]["tmp_name"][0];
         $filename1 = $_FILES["image"]["name"][0];
@@ -22,7 +22,7 @@ if ($_POST) {
             "png"  => "image/png"
         ];
 
-        if (!array_key_exists($extension1, $allowed) || !in_array($filetype1, $allowed) || $filesize1 > 1024 * 1024) {
+        if (!array_key_exists($extension1, $allowed) || !in_array($filetype1, $allowed) || $filesize1 > 2048 * 2048) {
             die("Screenshot file problem");
         }
 
@@ -41,7 +41,7 @@ if ($_POST) {
         $filesize2 = $_FILES["image"]["size"][1];
         $extension2 = strtolower(pathinfo($filename2, PATHINFO_EXTENSION));
 
-        if (!array_key_exists($extension2, $allowed) || !in_array($filetype2, $allowed) || $filesize2 > 1024 * 1024) {
+        if (!array_key_exists($extension2, $allowed) || !in_array($filetype2, $allowed) || $filesize2 > 2048 * 2048) {
             die("Jaquette file problem");
         }
 
@@ -80,9 +80,8 @@ if ($_POST) {
 }
 
 $title = "Add a game";
-include "header.php";
-include "navbar.php";
-include "footer.php";
+include "headerAdd.php";
+
 ?>
 
 <div class="container-fluid d-flex justify-content-center align-items-center">

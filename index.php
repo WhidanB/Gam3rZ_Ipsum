@@ -30,7 +30,7 @@ include "navbar.php";
         </video>
 
 
-        <h1>La sélection des meilleurs jeux, par des geeks, pour des g33ks.</h1>
+        <h1 class="intro">La sélection des meilleurs jeux, par des geeks, pour des g33ks.</h1>
 
     </section>
 
@@ -46,13 +46,13 @@ include "navbar.php";
             foreach ($result as $categorie) {
                 // print_r($stagiaire);
             ?>
-
-                <div class="categorie" style="background-image: url(<?= $categorie['cat_photo'] ?>); background-size: cover;">
-                    <div class="link-container">
-                        <a href="categories.php?id=<?= $categorie['id'] ?>"><?= $categorie['cat_name'] ?></a>
+                <a href="categories.php?id=<?= $categorie['id'] ?>">
+                    <div class="categorie" style="background-image: url(<?= $categorie['cat_photo'] ?>); background-size: cover;">
+                        <div class="link-container">
+                            <h2><?= $categorie['cat_name'] ?></h2>
+                        </div>
                     </div>
-                </div>
-
+                </a>
             <?php
             };
 
