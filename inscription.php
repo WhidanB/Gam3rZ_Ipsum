@@ -57,7 +57,6 @@ include "navbar.php";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $title ?></title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -65,51 +64,36 @@ include "navbar.php";
         <video autoplay loop muted>
             <source src="./assets/main.mp4">
         </video>
-
-
-
-        
-    <main>
-        
-
-            <div class="form-box">
-                <div class="form-value">
-                    <form class="connect" method="post">
-                        <h2>Inscription</h2>
-                        <div class="inputbox">
-                            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <path d="M12 3a4 4 0 1 0 0 8 4 4 0 1 0 0-8z"></path>
-                            </svg>
-                            <input type="text" name="user_name" required />
-                            <label for="user_name">Pseudo</label>
+        <div class="form-box">
+            <div class="form-value">
+                <form class="connect" method="post">
+                    <h2>Création de compte</h2>
+                    <div class="inputbox">
+                        <label for="user_name">Nom d'utilisateur</label><br>
+                        <input type="text" name="user_name" required />
+                    </div>
+                    <div class="inputbox">
+                        <label for="user_mail">E-mail</label><br>
+                        <input type="email" name="user_mail" required />
+                    </div>
+                    <div class="inputbox">
+                        <label for="pass">Mot de passe</label><br>
+                        <input type="password" name="pass" required />
+                    </div>
+                    <input type="submit" value="S'inscrire" class="sub">
+                    <div class="ou"><span>OU</span>
+                        <div class="formlogo">
+                            <img src="./assets/Facebook - Original.svg" alt="logo de facebook">
+                            <img src="./assets/Discord - Original.svg" alt="logo de discord">
+                            <img src="./assets/Twitch - Original.svg" alt="logo de twitch">
                         </div>
-                        <div class="inputbox">
-                            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <path d="m22 6-10 7L2 6"></path>
-                            </svg>
-                            <input type="email" name="user_mail" required />
-                            <label for="user_mail">Adresse mail</label>
-                        </div>
-                        <div class="inputbox">
-                            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                            </svg>
-                            <input type="password" name="pass" required />
-                            <label for="pass">Mot de passe</label>
-                        </div>
-                        <input type="submit" value="S'inscrire" class="sub">
-                        <div class="register">
-                            <p>Vous avez déjà un compte ? <a href="login.php">Se connecter</a></p>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="register">
+                        <p>Vous avez déjà un compte ? <a href="login.php">Se connecter</a></p>
+                    </div>
+                </form>
             </div>
-        
-    </main>
-
+        </div>
     </section>
 
 

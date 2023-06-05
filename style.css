@@ -1,268 +1,273 @@
 @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Electrolize&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
-  background-color: #f6f6f6;
+    box-sizing: border-box;
+    background-color: #f6f6f6;
 }
 
 header {
-  width: 100%;
-  top: 50px;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    top: 50px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 nav {
-  border-radius: 15px;
-  height: 70px;
-  width: 60%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  padding: 0 20px;
-  z-index: 5;
-  box-shadow: -12px 11px 15px -5px rgba(0, 0, 0, 0.61);
+    border-radius: 15px;
+    height: 70px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 20px;
+    z-index: 5;
+    box-shadow: -12px 11px 15px -5px rgba(0, 0, 0, 0.61);
 }
 
 nav a {
-  text-decoration: none;
-  color: #fff;
-  background-color: red;
-  font-family: "Dela Gothic One";
-  padding: 5px 10px;
-  border-radius: 5px;
-  letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: red;
+    font-family: "Dela Gothic One";
+    padding: 5px 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
 }
 
 video {
-  height: auto;
-  width: 100vw;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  box-shadow: 0px 0px 24px 20px rgba(255, 0, 0, 0.27);
+    height: auto;
+    width: 100vw;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    box-shadow: 0px 0px 24px 20px rgba(255, 0, 0, 0.27);
 }
 
 .intro {
-  font-family: "Electrolize";
-  font-size: 48px;
-  text-align: left;
-  color: #fff;
-  background: rgba(255, 255, 255, 0);
-  z-index: 2;
-  padding-right: 30%;
-  padding-left: 3%;
-  width: 60%;
+    font-family: "Electrolize";
+    font-size: 48px;
+    text-align: left;
+    color: #fff;
+    background: rgba(255, 255, 255, 0);
+    z-index: 2;
+    padding-right: 30%;
+    padding-left: 3%;
+    width: 60%;
 }
 
 
 
 .section1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
+
 .categorie {
-  text-align: center;
-  height: 200px;
+    text-align: center;
+    height: 200px;
 }
+
 .categorie:hover {
-  scale: 1.1;
+    scale: 1.1;
 }
 
 .categorie a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 32px;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 32px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 .link-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(1px);
 }
 
 .cate-container {
-  width: 60%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
 }
+
 .section2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 100px 0;
 }
 
 h2 {
-  font-family: "Electrolize";
-  font-size: 32px;
+    font-family: "Electrolize";
+    font-size: 32px;
 }
 
 footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: #fff;
-  height: 150px;
-  box-shadow: 0px 14px 24px 20px rgba(255, 0, 0, 0.27);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #fff;
+    height: 150px;
+    box-shadow: 0px 14px 24px 20px rgba(255, 0, 0, 0.27);
 }
 
 .footer-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .footer-left a {
-  text-decoration: none;
-  letter-spacing: 1px;
-  font-weight: 400;
-  color: #fff;
-  background-color: red;
-  font-family: "Dela Gothic One";
-  padding: 5px 10px;
-  border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #fff;
+    background-color: red;
+    font-family: "Dela Gothic One";
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .footer-left p {
-  color: gray;
-  font-family: "Electrolize";
+    color: gray;
+    font-family: "Electrolize";
 }
 
 .footer-center ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  font-family: "Electrolize";
-  list-style-type: none;
-  height: 100%;
-  font-size: 24px;
-  color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: "Electrolize";
+    list-style-type: none;
+    height: 100%;
+    font-size: 24px;
+    color: #000;
 }
 
 .footer-center li a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .footer-center li a:visited {
-  color: #000;
+    color: #000;
 }
 
 .footer-right {
-  font-size: 24px;
-  font-family: "Electrolize";
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+    font-size: 24px;
+    font-family: "Electrolize";
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .footer-right a {
-  color: gray;
+    color: gray;
 }
 
 .icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 120%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 120%;
 }
 
 .icons img {
-  height: 30px;
-  width: 30px;
+    height: 30px;
+    width: 30px;
 }
 
 /* CATEGORIES PAGE */
 
 .sectionCate {
-  background-image: url(./assets/bg_cate_jeux.jpg);
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: self-end;
+    background-image: url(./assets/bg_cate_jeux.jpg);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: self-end;
 }
 
 .cate_name {
-  font-family: "Electrolize";
-  font-size: 48px;
-  margin-bottom: 30px;
-  color: #fff;
+    font-family: "Electrolize";
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: #fff;
 }
+
 .game-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .game-card {
-  height: 230px;
-  width: 600px;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #d9d9d9;
-  padding: 0.5rem;
-  gap: 20px;
-  text-decoration: none;
-  color: #000;
-  font-family: "Electrolize";
+    height: 230px;
+    width: 600px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9d9d9;
+    padding: 0.5rem;
+    gap: 20px;
+    text-decoration: none;
+    color: #000;
+    font-family: "Electrolize";
 }
 
 .game-card img {
-  height: 100%;
-  width: auto;
+    height: 100%;
+    width: auto;
 }
+
 .card-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 400px;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 400px;
+    height: 100%;
 }
 
 .article-info {
-  display: flex;
-  flex-direction: column;
-  align-items: self-end;
-  text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: self-end;
+    text-align: right;
 }
 
 .game-info {
-  height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -270,8 +275,48 @@ footer {
 /* REGISTER PAGE */
 
 .form-box {
-    z-index: 2;
+    z-index: 2; 
+    margin-right: 35%;   
+    width: 350px;
+    display: flex;    
+    height: 50vh;    
+    border-radius: 15px;   
+    background-color: #fff; 
+    justify-content: center;  
+    align-items: center;     
 }
+
+.form-value {
+    display: ;
+}
+
+.connect {    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly 
+}
+
+.ou span {
+    display: block;
+    text-align: center;
+    
+}
+
+.formlogo {
+    padding-top: 5%;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.formlogo img{
+    height: 25px;
+}
+
+
+
 
 
 
