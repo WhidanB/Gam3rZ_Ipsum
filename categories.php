@@ -7,6 +7,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     require('close.php');
 }
 
+
 require("connect.php");
 $sql = "SELECT *
 FROM games
@@ -16,42 +17,57 @@ $query = $db->prepare($sql);
 $query->execute();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 require("close.php");
+$title = "Jeux" . " " . $result[0]['cate_name'];
+
+
+/* echo "<pre>";
+var_dump($result);
+echo "</pre>"; */
+
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include("header.php");
+include("navbar.php"); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeux <?= $result[0]['cate_name'] ?></title>
-</head>
+<section class="sectionCate">
+    <h1 class="cate_name">Jeux <?= $result[0]['cate_name'] ?></h1>
+</section>
 
-<body>
-
-    <table>
-
-        <?php
-        //pour chaque résultat de $result, on affiche une ligne dans le tableau
-        foreach ($result as $jeu) {
-            // print_r($stagiaire);
-        ?>
-
-            <tr>
-                <td>
-                    <a href="jeu.php?id=<?= $jeu['game_id'] ?>">
-                        <?= $jeu['game_name'] ?> </a>
-                </td>
+<div class="game-container">
 
 
-            </tr>
+    <?php
+    //pour chaque résultat de $result, on affiche une ligne dans le tableau
+    foreach ($result as $jeu) {
+        // print_r($stagiaire);
+    ?>
 
-        <?php
-        };
+        <a class="game-card" href="jeu.php?id=<?= $jeu['game_id'] ?>">
 
-        ?>
-    </table>
-</body>
+            <img src="<?= $jeu['game_cover'] ?>" alt="">
+            <div class="card-info">
 
-</html>
+                <div class="article-info">
+                    <p>Article ajouté le <?= $jeu["added"] ?></p>
+                    <p>Par <?= $jeu["user_name"] ?></p>
+                </div>
+                <div class="game-info">
+                    <p> <?= $jeu['game_name'] ?> </p>
+                    <p>Date de sortie: <?= $jeu['game_date'] ?> </p>
+                    <br>
+                </div>
+                <p>Cliquer pour voir plus</p>
+            </div>
+
+        </a>
+
+
+
+    <?php
+    };
+
+    ?>
+</div>
+
+<?php include_once("footer.php"); ?>
