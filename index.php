@@ -52,7 +52,7 @@ include "navbar.php";
             foreach ($result as $categorie) {
                 // print_r($stagiaire);
             ?>
-                <a href="categories.php?id=<?= $categorie['id'] ?>">
+                <a class="round" href="categories.php?id=<?= $categorie['id'] ?>">
                     <div class="categorie" style="background-image: url(<?= $categorie['cat_photo'] ?>); background-size: cover;">
                         <div class="link-container">
                             <h2><?= $categorie['cat_name'] ?></h2>
