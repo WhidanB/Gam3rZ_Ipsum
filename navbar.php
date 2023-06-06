@@ -12,7 +12,7 @@
             if (isset($_SESSION["user"])) {
                 echo
                 "<a href='backoffice.php'>Backoffice</a>
-    <a href='disconnect.php'>déco</a>";
+                <a href='disconnect.php'>déco</a>";
             }
             ?>
         </div>

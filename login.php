@@ -39,11 +39,11 @@ if (!empty($_POST)) {
 
         var_dump($_SESSION);
 
-        header("Location: backoffice.php");
+        header("Location: index.php");
     }
 }
 
-
+$title ="";
 include "navbar.php";
 
 ?>
@@ -71,30 +71,18 @@ include "navbar.php";
         <video autoplay loop muted>
             <source src="./assets/main.mp4">
         </video>
-
-
-
-
-
         <div class="form-box">
             <div class="form-value">
                 <form class="connect" method="post">
                     <h2>Connexion</h2>
-                    <div class="inputbox">
-                        <svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <path d="m22 6-10 7L2 6"></path>
-                        </svg>
-                        <input type="email" name="user_mail" required />
+                    <div class="inputbox">                        
                         <label for="user_mail">Adresse mail</label>
+                        <input type="email" name="user_mail" required />
                     </div>
-                    <div class="inputbox">
-                        <svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                        <input type="password" name="pass" required />
+                    <div class="inputbox">                        
                         <label for="pass">Mot de passe</label>
+                        <input type="password" name="pass" id="input" required />
+                        <p id="warning"></p>
                     </div>
                     <div class="forget">
                         <label for="">
@@ -102,8 +90,15 @@ include "navbar.php";
                         </label>
                     </div>
                     <input type="submit" value="Connexion" class="sub">
+
+                    <div class="formlogo">
+                        <img src="./assets/Facebook - Original.svg" alt="logo de facebook">
+                        <img src="./assets/Discord - Original.svg" alt="logo de discord">
+                        <img src="./assets/Twitch - Original.svg" alt="logo de twitch">
+                    </div>
+
                     <div class="register">
-                        <p>Vous n'avez pas de compte ? <a href="inscription.php">Créer un compte</a></p>
+                        <p>Pas de compte ? <a href="inscription.php"><strong>Créer un compte</strong></a></p>
                     </div>
                 </form>
             </div>
@@ -113,7 +108,4 @@ include "navbar.php";
 
     </section>
 
-
-</body>
-
-</html>
+    <?php include_once("footer.php"); ?>
