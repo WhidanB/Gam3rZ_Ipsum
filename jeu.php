@@ -13,28 +13,53 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     require_once('close.php');
 }
+$title = $result[0]["game_name"];
 include("header.php");
+include("navbar.php");
 ?>
 
-<table>
+<section class="sectionCate">
+    <h1 class="cate_name"><?= $result[0]["game_name"] ?></h1>
+</section>
+
+<div class="game-container2">
+
 
     <?php
     //pour chaque résultat de $result, on affiche une ligne dans le tableau
     foreach ($result as $jeu) {
-
-        var_dump($jeu);
         // print_r($stagiaire);
     ?>
 
-        <tr>
-            <td><?= $jeu['game_name'] ?></td>
-            <td><?= $jeu['game_date'] ?></td>
-            <td><?= $jeu['game_desc'] ?></td>
-        </tr>
-        <div class="photo"><img src="<?= $jeu['game_photo'] ?>" alt=""></div>
+
+        <section class="game-section">
+
+            <img src="<?= $jeu['game_cover'] ?>" alt="">
+            <div class="card-info2">
+
+                <div class="article-info">
+                    <p>Article ajouté le <?= $jeu["added"] ?></p>
+                    <p>Par <?= $jeu["user_name"] ?></p>
+                </div>
+                <div class="game-info2">
+
+                    <p><span class="desc">Description :</span><?= " " . $jeu['game_desc'] ?></p>
+                    <p>Date de sortie: <?= $jeu['game_date'] ?> </p>
+                </div>
+                <div class="game_photo">
+                    <img src="<?= $jeu["game_photo"] ?>" alt="">
+                </div>
+            </div>
+        </section>
+
+
+
+
 
     <?php
     };
 
     ?>
-</table>
+</div>
+
+<?php include_once("footer.php"); ?>
