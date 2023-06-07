@@ -3,18 +3,19 @@ session_start();
 
 if ($_POST) {
     if (
-        isset($_POST['game_name']) && isset($_POST['game_date']) && isset($_POST['game_desc']) && isset($_POST['cate_name']) && isset($_FILES["image"]) && count($_FILES["image"]["tmp_name"]) >= 2
+        isset($_POST['game_name']) && isset($_POST['game_date']) && isset($_POST['game_desc']) && isset($_POST['cate_name']) && isset($_FILES["image"])
     ) {
+        require('connect.php');
         //echo "<pre>";
         //var_dump($_FILES);
         //echo "</pre>";
 
         // file screenshot process
-        $file1 = $_FILES["image"]["tmp_name"][0];
-        $filename1 = $_FILES["image"]["name"][0];
-        $filetype1 = $_FILES["image"]["type"][0];
-        $filesize1 = $_FILES["image"]["size"][0];
-        $extension1 = strtolower(pathinfo($filename1, PATHINFO_EXTENSION));
+        // $file1 = $_FILES["image"]["tmp_name"][0];
+        // $filename1 = $_FILES["image"]["name"][0];
+        // $filetype1 = $_FILES["image"]["type"][0];
+        // $filesize1 = $_FILES["image"]["size"][0];
+        // $extension1 = strtolower(pathinfo($filename1, PATHINFO_EXTENSION));
 
         $allowed = [
             "jpg"  => "image/jpg",
@@ -22,23 +23,59 @@ if ($_POST) {
             "png"  => "image/png"
         ];
 
-        if (!array_key_exists($extension1, $allowed) || !in_array($filetype1, $allowed) || $filesize1 > 2048 * 2048) {
-            die("Screenshot file problem");
-        }
+        // if (!array_key_exists($extension1, $allowed) || !in_array($filetype1, $allowed) || $filesize1 > 2048 * 2048) {
+        //     die("Screenshot file problem");
+        // }
 
-        $newname1 = md5(uniqid()) . "." . $extension1;
-        $newfilename1 = "./uploads/$newname1";
+        // $newname1 = md5(uniqid()) . "." . $extension1;
+        // $newfilename1 = "./uploads/$newname1";
 
-        if (!move_uploaded_file($file1, $newfilename1)) {
-            die("Failed to upload Screenshot file");
-        }
+        // if (!move_uploaded_file($file1, $newfilename1)) {
+        //     die("Failed to upload Screenshot file");
+        // }
         // END file screenshot process
+        $uploadsDir = "uploads/";
+        $allowedFileType = array('jpg', 'png', 'jpeg');
+        foreach ($_FILES['fileUpload']['name'] as $id => $val) {
+            // Get files upload path
+            $fileName        = "$uploadsDir . $_FILES['fileUpload']['name'][$id]";
+            $tempLocation    = $_FILES['fileUpload']['tmp_name'][$id];
+            $game = $_POST['game_name'];
+            $targetFilePath  = $uploadsDir . $fileName;
+            $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+            $uploadDate      = date('Y-m-d H:i:s');
+            $uploadOk = 1;
+            if (in_array($fileType, $allowedFileType)) {
+                if (move_uploaded_file($tempLocation, $targetFilePath)) {
+                    $sqlVal = "('" . $fileName . "', '" . $uploadDate . "', '" . $game . "')";
+                } else {
+                    $response = array(
+                        "status" => "alert-danger",
+                        "message" => "File coud not be uploaded."
+                    );
+                }
+            }
+            if (!empty($sqlVal)) {
+                $insert = $db->query("INSERT INTO screenshots (images, date_time, game) VALUES $sqlVal");
+                if ($insert) {
+                    $response = array(
+                        "status" => "alert-success",
+                        "message" => "Files successfully uploaded."
+                    );
+                } else {
+                    $response = array(
+                        "status" => "alert-danger",
+                        "message" => "Files coudn't be uploaded due to database error."
+                    );
+                }
+            }
+        }
 
         // file jaquette process
-        $file2 = $_FILES["image"]["tmp_name"][1];
-        $filename2 = $_FILES["image"]["name"][1];
-        $filetype2 = $_FILES["image"]["type"][1];
-        $filesize2 = $_FILES["image"]["size"][1];
+        $file2 = $_FILES["image"]["tmp_name"];
+        $filename2 = $_FILES["image"]["name"];
+        $filetype2 = $_FILES["image"]["type"];
+        $filesize2 = $_FILES["image"]["size"];
         $extension2 = strtolower(pathinfo($filename2, PATHINFO_EXTENSION));
 
         if (!array_key_exists($extension2, $allowed) || !in_array($filetype2, $allowed) || $filesize2 > 2048 * 2048) {
@@ -54,21 +91,19 @@ if ($_POST) {
         //END file jaquette process
 
         //adding to db        
-        require('connect.php');
+
         $game_name = strip_tags($_POST['game_name']);
         $game_date = $_POST['game_date'];
         $game_desc = strip_tags($_POST['game_desc']);
-        $game_photo = $newfilename1;
         $game_cover = $newfilename2;
         $cate_name = $_POST['cate_name'];
         $added = DATE('Y/m/d');
         $user_name = $_SESSION["user"]["pseudo"];
-        $sql = "INSERT INTO games (game_name, game_date, game_desc, game_photo, game_cover, cate_name, added, user_name ) VALUES (:game_name, :game_date, :game_desc, :game_photo, :game_cover, :cate_name, :added, :user_name)";
+        $sql = "INSERT INTO games (game_name, game_date, game_desc, game_cover, cate_name, added, user_name ) VALUES (:game_name, :game_date, :game_desc, :game_cover, :cate_name, :added, :user_name)";
         $query = $db->prepare($sql);
         $query->bindValue(':game_name', $game_name);
         $query->bindValue(':game_date', $game_date);
         $query->bindValue(':game_desc', $game_desc);
-        $query->bindValue(':game_photo', $game_photo);
         $query->bindValue(':game_cover', $game_cover);
         $query->bindValue(':cate_name', $cate_name);
         $query->bindValue(':added', $added);
@@ -78,6 +113,7 @@ if ($_POST) {
         //header("Location: backoffice.php");
     }
 }
+
 
 $title = "Add a game";
 include "headerAdd.php";
@@ -106,30 +142,27 @@ include "headerAdd.php";
 
 
             <!-- Screenshot mulitple -->
-            <form action="" method="post" enctype="multipart/form-data" class="mb-3">
-                <div class="custom-file">
-                    <input type="file" name="fileUpload[]" class="custom-file-input" id="chooseFile" multiple>
-                    <label class="custom-file-label" for="chooseFile">Upload</label>
-                </div>
-                <div class="container imgGallery">
-                    <!-- image preview -->
-                </div>
-                <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
-                    Upload Files
-                </button>
-            </form>
+
+            <div class="custom-file">
+                <input type="file" name="fileUpload[]" class="custom-file-input" id="chooseFile" multiple>
+                <label class="custom-file-label" for="chooseFile">Upload</label>
+            </div>
+            <div class="container imgGallery">
+                <!-- image preview -->
+            </div>
+
             <!-- End Screenshot mulitple -->
 
 
 
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="screenshot">Screenshot</label>
                 <input type="file" name="image[]" id="screenshot" class="form-control-file" required>
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="jaquette">Jaquette</label>
-                <input type="file" name="image[]" id="jaquette" class="form-control-file" required>
+                <input type="file" name="image" id="jaquette" class="form-control-file" required>
             </div>
             <div class="form-group">
                 <label for="cate_name">Catégorie</label>
@@ -152,23 +185,23 @@ include "headerAdd.php";
 <!-- Script et jquery pour les preview du multiple screenshot -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script>
-  $(function () {
-    // Multiple images preview with JavaScript
-    var multiImgPreview = function (input, imgPreviewPlaceholder) {
-      if (input.files) {
-        var filesAmount = input.files.length;
-        for (i = 0; i < filesAmount; i++) {
-          var reader = new FileReader();
-          reader.onload = function (event) {
-            $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(imgPreviewPlaceholder);
-          }
-          reader.readAsDataURL(input.files[i]);
-        }
-      }
-    };
-    $('#chooseFile').on('change', function () {
-      multiImgPreview(this, 'div.imgGallery');
+    $(function() {
+        // Multiple images preview with JavaScript
+        var multiImgPreview = function(input, imgPreviewPlaceholder) {
+            if (input.files) {
+                var filesAmount = input.files.length;
+                for (i = 0; i < filesAmount; i++) {
+                    var reader = new FileReader();
+                    reader.onload = function(event) {
+                        $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(imgPreviewPlaceholder);
+                    }
+                    reader.readAsDataURL(input.files[i]);
+                }
+            }
+        };
+        $('#chooseFile').on('change', function() {
+            multiImgPreview(this, 'div.imgGallery');
+        });
     });
-  });
 </script>
 <!-- END Script -->
