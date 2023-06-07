@@ -47,7 +47,7 @@ if ($_POST) {
             $uploadOk = 1;
             if (in_array($fileType, $allowedFileType)) {
                 if (move_uploaded_file($tempLocation, $targetFilePath)) {
-                    $sqlVal = "('" . $fileName . "', '" . $uploadDate . "', '" . $game . "')";
+                    $sqlVal = "('" . $targetFilePath . "', '" . $uploadDate . "', '" . $game . "')";
                 } else {
                     $response = array(
                         "status" => "alert-danger",
