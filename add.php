@@ -38,7 +38,7 @@ if ($_POST) {
         $allowedFileType = array('jpg', 'png', 'jpeg');
         foreach ($_FILES['fileUpload']['name'] as $id => $val) {
             // Get files upload path
-            $fileName        = "$uploadsDir . $_FILES['fileUpload']['name'][$id]";
+            $fileName        = $_FILES['fileUpload']['name'][$id];
             $tempLocation    = $_FILES['fileUpload']['tmp_name'][$id];
             $game = $_POST['game_name'];
             $targetFilePath  = $uploadsDir . $fileName;
@@ -47,7 +47,7 @@ if ($_POST) {
             $uploadOk = 1;
             if (in_array($fileType, $allowedFileType)) {
                 if (move_uploaded_file($tempLocation, $targetFilePath)) {
-                    $sqlVal = "('" . $fileName . "', '" . $uploadDate . "', '" . $game . "')";
+                    $sqlVal = "('" . $targetFilePath . "', '" . $uploadDate . "', '" . $game . "')";
                 } else {
                     $response = array(
                         "status" => "alert-danger",

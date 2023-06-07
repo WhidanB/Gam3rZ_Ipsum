@@ -11,9 +11,17 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $query->bindValue(':id', $id, PDO::PARAM_INT);
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    require_once('close.php');
 }
 $title = $result[0]["game_name"];
+$sql = "SELECT images FROM screenshots INNER JOIN games WHERE screenshots.game = games.game_name";
+$query = $db->prepare($sql);
+
+$query->execute();
+$image = $query->fetchAll(PDO::FETCH_ASSOC);
+require_once('close.php');
+
+var_dump($image);
+
 include("header.php");
 include("navbar.php");
 ?>
@@ -46,9 +54,13 @@ include("navbar.php");
                     <p><span class="desc">Description :</span><?= " " . $jeu['game_desc'] ?></p>
                     <p>Date de sortie: <?= $jeu['game_date'] ?> </p>
                 </div>
-                <div class="game_photo">
-                    <img src="<?= $jeu["game_photo"] ?>" alt="">
-                </div>
+                <?php
+                foreach ($image as $screenshot) {
+                ?>
+                    <div class="game_photo">
+                        <img src="<?= $screenshot["images"] ?>" alt="">
+                    </div>
+                <?php } ?>
             </div>
         </section>
 
