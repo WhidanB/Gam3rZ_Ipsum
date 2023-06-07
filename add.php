@@ -84,7 +84,7 @@ include "headerAdd.php";
 
 ?>
 
-<div class="container-fluid d-flex justify-content-center align-items-center">
+<div class="container container-fluid d-flex justify-content-center align-items-center">
     <div class="col-8">
         <h1 class="text-center">Ajouter un jeu</h1>
         <form method="post" enctype="multipart/form-data">
@@ -100,6 +100,29 @@ include "headerAdd.php";
                 <label for="game_desc">Description</label>
                 <textarea name="game_desc" class="form-control" required></textarea>
             </div>
+
+
+
+
+
+            <!-- Screenshot mulitple -->
+            <form action="" method="post" enctype="multipart/form-data" class="mb-3">
+                <div class="custom-file">
+                    <input type="file" name="fileUpload[]" class="custom-file-input" id="chooseFile" multiple>
+                    <label class="custom-file-label" for="chooseFile">Upload</label>
+                </div>
+                <div class="container imgGallery">
+                    <!-- image preview -->
+                </div>
+                <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
+                    Upload Files
+                </button>
+            </form>
+            <!-- End Screenshot mulitple -->
+
+
+
+
             <div class="form-group">
                 <label for="screenshot">Screenshot</label>
                 <input type="file" name="image[]" id="screenshot" class="form-control-file" required>
@@ -125,3 +148,27 @@ include "headerAdd.php";
         </form>
     </div>
 </div>
+
+<!-- Script et jquery pour les preview du multiple screenshot -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script>
+  $(function () {
+    // Multiple images preview with JavaScript
+    var multiImgPreview = function (input, imgPreviewPlaceholder) {
+      if (input.files) {
+        var filesAmount = input.files.length;
+        for (i = 0; i < filesAmount; i++) {
+          var reader = new FileReader();
+          reader.onload = function (event) {
+            $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(imgPreviewPlaceholder);
+          }
+          reader.readAsDataURL(input.files[i]);
+        }
+      }
+    };
+    $('#chooseFile').on('change', function () {
+      multiImgPreview(this, 'div.imgGallery');
+    });
+  });
+</script>
+<!-- END Script -->
