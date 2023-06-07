@@ -240,6 +240,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: self-end;
+  z-index: 4;
 }
 
 .cate_name {
@@ -325,6 +326,7 @@ footer {
   border-radius: 10px;
   border: red 3px solid;
   font-family: "Electrolize";
+  z-index: 3;
 }
 
 .game-section img {

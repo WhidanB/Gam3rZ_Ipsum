@@ -65,5 +65,5 @@ include "navbar.php";
             ?>
         </div>
     </section>
-
+    <script src="passwordcheck.js"></script>
     <?php include_once("footer.php"); ?>

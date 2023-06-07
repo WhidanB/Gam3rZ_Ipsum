@@ -43,7 +43,7 @@ if (!empty($_POST)) {
     }
 }
 
-$title ="";
+$title = "";
 include "navbar.php";
 
 ?>
@@ -75,11 +75,11 @@ include "navbar.php";
             <div class="form-value">
                 <form class="connect" method="post">
                     <h2>Connexion</h2>
-                    <div class="inputbox">                        
+                    <div class="inputbox">
                         <label for="user_mail">Adresse mail</label>
                         <input type="email" name="user_mail" required />
                     </div>
-                    <div class="inputbox">                        
+                    <div class="inputbox">
                         <label for="pass">Mot de passe</label>
                         <input type="password" name="pass" id="input" required />
                         <p id="warning"></p>
@@ -107,5 +107,5 @@ include "navbar.php";
 
 
     </section>
-
+    <script src="passwordcheck.js"></script>
     <?php include_once("footer.php"); ?>

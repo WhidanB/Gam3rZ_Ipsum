@@ -78,7 +78,8 @@ include "navbar.php";
                     </div>
                     <div class="inputbox">
                         <label for="pass">Mot de passe</label><br>
-                        <input type="password" name="pass" required />
+                        <input type="password" id="input" name="pass" required />
+                        <p id="warning"></p>
                     </div>
                     <input type="submit" value="S'inscrire" class="sub">
 
@@ -118,7 +119,7 @@ include "navbar.php";
             </div>
         </div>
     </footer>
+    <script src="passwordcheck.js"></script>
+</body>
 
-    </body>
-
-    </html>
+</html>
