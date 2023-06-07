@@ -118,12 +118,12 @@ video {
 }
 
 .container {
-    max-width: 450px;
-  }
+  max-width: 450px;
+}
 .imgGallery img {
-    padding: 8px;
-    max-width: 250px;
-  } 
+  padding: 8px;
+  max-width: 250px;
+}
 
 .link-container {
   width: 100%;
@@ -334,6 +334,9 @@ footer {
 
 .card-info2 {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .game-info2 {
@@ -346,12 +349,13 @@ footer {
 .game_photo {
   width: 100%;
   display: flex;
-  justify-content: center;
-  cursor: pointer;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .game_photo img {
-  width: 300px;
+  width: 230px;
   height: auto;
+  cursor: pointer;
 }
 .game-container2 {
   display: flex;
@@ -368,21 +372,21 @@ footer {
 
 /* REGISTER PAGE */
 .form-box {
-    display: flex;
-    width: 60%;
-    z-index: 2;   
-    height: 50vh;     
+  display: flex;
+  width: 60%;
+  z-index: 2;
+  height: 50vh;
 }
 
-.form-value {      
-    width: 350px;
-    display: flex;    
-    height: 50vh;    
-    border-radius: 15px;   
-    background-color: #fff; 
-    justify-content: center;  
-    align-items: center;  
-    box-shadow: -12px 11px 15px -5px rgba(0, 0, 0, 0.61);   
+.form-value {
+  width: 350px;
+  display: flex;
+  height: 50vh;
+  border-radius: 15px;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -12px 11px 15px -5px rgba(0, 0, 0, 0.61);
 }
 
 .connect {
@@ -407,58 +411,58 @@ footer {
 .connect input[type="text"],
 .connect input[type="email"],
 .connect input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-bottom: 1px solid red;
-    outline: none;
-    font-family: "Electrolize";
-    font-size: 1rem;
-    margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid red;
+  outline: none;
+  font-family: "Electrolize";
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .connect input[type="submit"] {
-    background-color: red;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-family: "Electrolize";
-    font-size: 1rem;
-    cursor: pointer;
+  background-color: red;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Electrolize";
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .connect input[type="submit"]:hover {
-    background-color: rgb(130, 0, 0);
+  background-color: rgb(130, 0, 0);
 }
 
 .connect label {
-    font-family: "Electrolize";
-    font-size: 1rem;
-    font-weight: bold;
+  font-family: "Electrolize";
+  font-size: 1rem;
+  font-weight: bold;
 }
 
-.connect h2{
-    text-align: center;
-    font-size: 1rem;
-    padding: 10px;
+.connect h2 {
+  text-align: center;
+  font-size: 1rem;
+  padding: 10px;
 }
 
 #warning {
-    font-size: .8rem;
-    font-family: "Electrolize";
+  font-size: 0.8rem;
+  font-family: "Electrolize";
 }
 
 .register p {
-    text-align: center;
-    color: #333;
-    font-family: "Electrolize";
-    font-size: 1rem;
+  text-align: center;
+  color: #333;
+  font-family: "Electrolize";
+  font-size: 1rem;
 }
 
 .register a {
-    color: #000;
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 
 /* END REGISTER PAGE */
