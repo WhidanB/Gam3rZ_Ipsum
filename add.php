@@ -17,11 +17,7 @@ if ($_POST) {
         // $filesize1 = $_FILES["image"]["size"][0];
         // $extension1 = strtolower(pathinfo($filename1, PATHINFO_EXTENSION));
 
-        $allowed = [
-            "jpg"  => "image/jpg",
-            "jpeg" => "image/jpeg",
-            "png"  => "image/png"
-        ];
+
 
         // if (!array_key_exists($extension1, $allowed) || !in_array($filetype1, $allowed) || $filesize1 > 2048 * 2048) {
         //     die("Screenshot file problem");
@@ -34,6 +30,11 @@ if ($_POST) {
         //     die("Failed to upload Screenshot file");
         // }
         // END file screenshot process
+        $allowed = [
+            "jpg"  => "image/jpg",
+            "jpeg" => "image/jpeg",
+            "png"  => "image/png"
+        ];
         $uploadsDir = "uploads/";
         $allowedFileType = array('jpg', 'png', 'jpeg');
         foreach ($_FILES['fileUpload']['name'] as $id => $val) {
@@ -78,7 +79,7 @@ if ($_POST) {
         $filesize2 = $_FILES["image"]["size"];
         $extension2 = strtolower(pathinfo($filename2, PATHINFO_EXTENSION));
 
-        if (!array_key_exists($extension2, $allowed) || !in_array($filetype2, $allowed) || $filesize2 > 2048 * 2048) {
+        if (!array_key_exists($extension2, $allowed) || !in_array($filetype2, $allowed) || $filesize2 > 4096 * 4096) {
             die("Jaquette file problem");
         }
 
