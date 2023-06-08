@@ -22,43 +22,49 @@ if ($_POST) {
         isset($_POST['game_name']) && isset($_POST['game_date']) && isset($_POST['game_desc']) && isset($_POST['cate_name'])
     ) {
 
-        $allowed = [
-            "jpg"  => "image/jpg",
-            "jpeg" => "image/jpeg",
-            "png"  => "image/png"
-        ];
+        if (!empty($_FILES["image"]["name"])) {
+            $allowed = [
+                "jpg"  => "image/jpg",
+                "jpeg" => "image/jpeg",
+                "png"  => "image/png"
+            ];
 
-        $file2 = $_FILES["image"]["tmp_name"];
-        $filename2 = $_FILES["image"]["name"];
-        $filetype2 = $_FILES["image"]["type"];
-        $filesize2 = $_FILES["image"]["size"];
-        $extension2 = strtolower(pathinfo($filename2, PATHINFO_EXTENSION));
+            $file2 = $_FILES["image"]["tmp_name"];
+            $filename2 = $_FILES["image"]["name"];
+            $filetype2 = $_FILES["image"]["type"];
+            $filesize2 = $_FILES["image"]["size"];
+            $extension2 = strtolower(pathinfo($filename2, PATHINFO_EXTENSION));
+            if (!array_key_exists($extension2, $allowed) || !in_array($filetype2, $allowed) || $filesize2 > 4096 * 4096) {
+                die("File jaquette problem");
+            }
 
-        if (!array_key_exists($extension2, $allowed) || !in_array($filetype2, $allowed) || $filesize2 > 4096 * 4096) {
-            die("Jaquette file problem");
+            $newname2 = md5(uniqid()) . "." . $extension2;
+            $newfilename2 = "./uploads/$newname2";
+
+            if (!move_uploaded_file($file2, $newfilename2)) {
+                die("Failed to upload Jaquette file");
+            }
+            require('connect.php');
+            $sql = "UPDATE games SET game_cover = :game_cover WHERE game_id=$id";
+            $query = $db->prepare($sql);
+            $query->bindValue(':game_cover', $newfilename2);
+            $query->execute();
         }
 
-        $newname2 = md5(uniqid()) . "." . $extension2;
-        $newfilename2 = "./uploads/$newname2";
-
-        if (!move_uploaded_file($file2, $newfilename2)) {
-            die("Failed to upload Jaquette file");
-        }
 
 
-        print_r($_POST);
         require('connect.php');
         $game_name = strip_tags($_POST['game_name']);
         $game_date = $_POST['game_date'];
         $game_desc = $_POST['game_desc'];
         $cate_name = $_POST['cate_name'];
-        $sql = "UPDATE games SET game_name = :game_name, game_date = :game_date, game_desc = :game_desc, game_cover = :game_cover, cate_name = :cate_name WHERE game_id=$id";
+        $sql = "UPDATE games SET game_name = :game_name, game_date = :game_date, game_desc = :game_desc, cate_name = :cate_name WHERE game_id=$id";
         $query = $db->prepare($sql);
         $query->bindValue(':game_name', $game_name);
         $query->bindValue(':game_date', $game_date);
         $query->bindValue(':game_desc', $game_desc);
         $query->bindValue(':cate_name', $cate_name);
-        $query->bindValue(':game_cover', $newfilename2);
+
 
         $query->execute();
 
@@ -106,12 +112,12 @@ if ($_POST) {
     require("close.php");
     header("Location: backoffice.php");
 }
+
 // else {
 //     header("Location: index.php");
 // }
 $title = "Modifier" . " " . $result["game_name"];
 include("headerAdd.php");
-print_r($result["game_cover"]);
 ?>
 
 
@@ -135,17 +141,17 @@ print_r($result["game_cover"]);
 
                 <div class="form-group">
                     <label for="jaquette">Jaquette</label>
-                    <input type="file" name="image" id="jaquette" value="<?= $result["game_cover"] ?>" class="form-control-file">
+                    <input type="file" name="image" id="jaquette" class="form-control-file">
                 </div>
                 <div class="form-group">
                     <label for="cate_name">Catégorie</label>
-                    <select name="cate_name" value="<?= $result["cate_name"] ?>" required>
-                        <option value="RPG">RPG</option>
-                        <option value="FPS">FPS</option>
-                        <option value="MMO">MMO</option>
-                        <option value="Strategie">Stratégie</option>
-                        <option value="Simulation">Simulation</option>
-                        <option value="Survival Horror">Survival Horror</option>
+                    <select name="cate_name" required>
+                        <option value="RPG" <?php if ($result["cate_name"] == "RPG") echo 'selected'; ?>>RPG</option>
+                        <option value="FPS" <?php if ($result["cate_name"] == "FPS") echo 'selected'; ?>>FPS</option>
+                        <option value="MMO" <?php if ($result["cate_name"] == "MMO") echo 'selected'; ?>>MMO</option>
+                        <option value="Strategie" <?php if ($result["cate_name"] == "Strategie") echo 'selected'; ?>>Stratégie</option>
+                        <option value="Simulation" <?php if ($result["cate_name"] == "Simulation") echo 'selected'; ?>>Simulation</option>
+                        <option value="Survival Horror" <?php if ($result["cate_name"] == "Survival Horror") echo 'selected'; ?>>Survival Horror</option>
 
                     </select>
                 </div>
