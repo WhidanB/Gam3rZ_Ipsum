@@ -43,8 +43,8 @@ if (!empty($_POST)) {
     }
 }
 
-$title = "";
-include "navbar.php";
+$title = "login";
+
 
 ?>
 
@@ -67,6 +67,7 @@ include "navbar.php";
 </head>
 
 <body>
+    <?php include "navbar.php"; ?>
     <section class="section1">
         <video autoplay loop muted>
             <source src="./assets/main.mp4">
