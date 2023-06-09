@@ -157,8 +157,9 @@ h2 {
 }
 
 footer {
+  position: absolute;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
