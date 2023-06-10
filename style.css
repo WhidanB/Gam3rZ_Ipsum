@@ -87,6 +87,7 @@ video {
 .categorie {
   text-align: center;
   height: 200px;
+  background-position: center;
   transition: 0.3s ease;
 }
 

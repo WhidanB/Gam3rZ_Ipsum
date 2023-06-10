@@ -16,6 +16,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $query = $db->prepare($sql);
     $query->bindValue(':id', $id, PDO::PARAM_INT);
     $query->execute();
+    $_SESSION["del"]["toast"] = 1;
     header(('Location: backoffice.php'));
     require_once('close.php');
 }

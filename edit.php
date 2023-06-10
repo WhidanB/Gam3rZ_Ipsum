@@ -110,6 +110,9 @@ if ($_POST) {
         }
     }
     require("close.php");
+
+    $_SESSION["edit"]["toast"] = 1;
+
     header("Location: backoffice.php");
 }
 

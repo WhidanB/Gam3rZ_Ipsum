@@ -111,7 +111,8 @@ if ($_POST) {
         $query->bindValue(':user_name', $user_name);
         $query->execute();
         require('close.php');
-        //header("Location: backoffice.php");
+        $_SESSION["add"]["toast"] = 1;
+        header("Location: backoffice.php");
     }
 }
 
