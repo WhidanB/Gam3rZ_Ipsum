@@ -44,11 +44,10 @@ if ($_POST) {
             $game = $_POST['game_name'];
             $targetFilePath  = $uploadsDir . $fileName;
             $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
-            $uploadDate      = date('Y-m-d H:i:s');
             $uploadOk = 1;
             if (in_array($fileType, $allowedFileType)) {
                 if (move_uploaded_file($tempLocation, $targetFilePath)) {
-                    $sqlVal = "('" . $targetFilePath . "', '" . $uploadDate . "', '" . $game . "')";
+                    $sqlVal = "('" . $targetFilePath . "', '" . $game . "')";
                 } else {
                     $response = array(
                         "status" => "alert-danger",
@@ -57,7 +56,7 @@ if ($_POST) {
                 }
             }
             if (!empty($sqlVal)) {
-                $insert = $db->query("INSERT INTO screenshots (images, date_time, game) VALUES $sqlVal");
+                $insert = $db->query("INSERT INTO screenshots (images, game) VALUES $sqlVal");
                 if ($insert) {
                     $response = array(
                         "status" => "alert-success",
