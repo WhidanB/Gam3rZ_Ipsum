@@ -11,6 +11,19 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $query->bindValue(':id', $id, PDO::PARAM_INT);
     $query->execute();
     $result = $query->fetch();
+
+    $game = $result["game_name"];
+
+
+    $sql = "SELECT * FROM screenshots WHERE game = '$game'";
+    $query = $db->prepare($sql);
+    $query->execute();
+    $screen = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
+
     require_once('close.php');
 
     // header("Location: index.php");
@@ -138,7 +151,19 @@ include("headerAdd.php");
                     <label class="custom-file-label" for="chooseFile">Upload</label>
                 </div>
                 <div class="container imgGallery">
-                    <!-- image preview -->
+
+                </div>
+                <div class="container col-12 screens border">
+                    <?php
+                    foreach ($screen as $screen) {
+                    ?>
+                        <a href="imagedel.php?id=<?= $screen["id"] ?>">
+                            <img style="width: 200px; height:auto;" onclick="imagedel.php" src="<?= $screen["images"] ?>">
+                        </a>
+                    <?php
+                    }
+                    ?>
+
                 </div>
 
                 <div class="form-group">
