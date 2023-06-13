@@ -16,15 +16,51 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 $title = $result[0]["game_name"];
 $sql = "SELECT images FROM screenshots WHERE game = '$title'";
 $query = $db->prepare($sql);
-
 $query->execute();
 $image = $query->fetchAll(PDO::FETCH_ASSOC);
+
+$sql = "SELECT images FROM screenshots WHERE game = '$title'";
+$query = $db->prepare($sql);
+$query->execute();
+$screen = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
 require_once('close.php');
 
 
 include("header.php");
 include("navbar.php");
 ?>
+
+<div class="overlay"></div>
+<div class="modal">
+    <div class="slider">
+        <div class="slider_nav">
+            <button onclick="previous()" style="display: none;" class="slider_nav_button slider_nav_prev"><svg width="30" height="30" fill="none" stroke="#2b2b2b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
+                    <path d="m12 8-4 4 4 4"></path>
+                    <path d="M16 12H8"></path>
+                </svg></button>
+            <button onclick="next()" class="slider_nav_button slider_nav_next"><svg width="30" height="30" fill="none" stroke="#2b2b2b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
+                    <path d="m12 16 4-4-4-4"></path>
+                    <path d="M8 12h8"></path>
+                </svg></button>
+        </div>
+        <div class="slider_content">
+            <?php
+            foreach ($image as $image) {
+            ?>
+                <div class="slider_content_item">
+                    <img src="<?= $image["images"] ?>" alt="">
+                </div>
+            <?php
+            }
+            ?>
+        </div>
+    </div>
+</div>
+
 
 <section class="sectionCate">
     <h1 class="cate_name"><?= $result[0]["game_name"] ?></h1>
@@ -56,13 +92,17 @@ include("navbar.php");
                 </div>
                 <div class="game_photo">
                     <?php
-                    foreach ($image as $screenshot) {
+                    foreach ($screen as $screen) {
+
                     ?>
-                        <img src="<?= $screenshot["images"] ?>" alt="">
+
+                        <img class="screen" src="<?= $screen["images"] ?>" alt="">
                     <?php } ?>
                 </div>
             </div>
         </section>
+
+
 
 
 
@@ -73,5 +113,8 @@ include("navbar.php");
 
     ?>
 </div>
+<script src="index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<?php include_once("footer.php"); ?>
+
+<?php include("footer.php"); ?>

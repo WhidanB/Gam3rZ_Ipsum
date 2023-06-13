@@ -116,7 +116,7 @@ if ($_POST) {
 }
 
 
-$title = "Add a game";
+$title = "Ajouter un jeu";
 include "headerAdd.php";
 
 ?>
