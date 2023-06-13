@@ -1,598 +1,609 @@
 @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Electrolize&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
-  background-color: #f6f6f6;
+    box-sizing: border-box;
+    background-color: #f6f6f6;
+    width: 100vw;
+    height: 100vh;
 }
 
 header {
-  width: 100%;
-  top: 50px;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    top: 50px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 nav {
-  border-radius: 15px;
-  height: 70px;
-  width: 60%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  padding: 0 20px;
-  z-index: 5;
-  box-shadow: -12px 11px 15px -5px rgba(0, 0, 0, 0.61);
+    border-radius: 15px;
+    height: 70px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 20px;
+    z-index: 5;
+    box-shadow: -12px 11px 15px -5px rgba(0, 0, 0, 0.61);
 }
 
 .logo {
-  font-family: "Road Rage";
+    font-family: "Road Rage";
 }
 
 nav a {
-  text-decoration: none;
-  color: #fff;
-  font-family: "Electrolize";
-  background-color: red;
-  padding: 5px 10px;
-  border-radius: 5px;
-  letter-spacing: 1px;
-  font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+    font-family: "Electrolize";
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
 
 video {
-  height: 100%;
-  width: 100vw;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  box-shadow: 0px 0px 24px 20px rgba(255, 0, 0, 0.27);
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    box-shadow: 0px 0px 24px 20px rgba(255, 0, 0, 0.27);
 }
 
 .intro {
-  font-family: "Electrolize";
-  font-size: 48px;
-  text-align: left;
-  color: #fff;
-  background: rgba(255, 255, 255, 0);
-  z-index: 2;
-  padding-right: 30%;
-  padding-left: 3%;
-  width: 60%;
+    font-family: "Electrolize";
+    font-size: 48px;
+    text-align: left;
+    color: #fff;
+    background: rgba(255, 255, 255, 0);
+    z-index: 2;
+    padding-right: 30%;
+    padding-left: 3%;
+    width: 60%;
 }
 
 .section1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 97vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 97vh;
 }
 
 .categorie {
-  text-align: center;
-  height: 200px;
-  background-position: center;
-  transition: 0.3s ease;
+    text-align: center;
+    height: 200px;
+    background-position: center;
+    transition: 0.3s ease;
 }
 
 .round:nth-child(1) div:nth-child(1) {
-  border-radius: 10px 0 0 0;
+    border-radius: 10px 0 0 0;
 }
 
 .round:nth-child(3) div:nth-child(1) {
-  border-radius: 0 10px 0 0;
+    border-radius: 0 10px 0 0;
 }
 
 .round:nth-child(4) div:nth-child(1) {
-  border-radius: 0 0 0 10px;
+    border-radius: 0 0 0 10px;
 }
 
 .round:nth-child(6) div:nth-child(1) {
-  border-radius: 0 0 10px 0;
+    border-radius: 0 0 10px 0;
 }
 
 .categorie:hover {
-  scale: 1.1;
-  transition: 0.3s ease;
+    scale: 1.1;
+    transition: 0.3s ease;
 }
 
 .cate-container a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 32px;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 32px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 .container {
-  max-width: 450px;
+    max-width: 450px;
 }
 
 .imgGallery img {
-  padding: 8px;
-  max-width: 250px;
+    padding: 8px;
+    max-width: 250px;
 }
 
 .screens img {
-  padding: 8px;
-  max-width: 250px;
+    padding: 8px;
+    max-width: 250px;
 }
 
 .link-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(0.5px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(0.5px);
 }
 
 .cate-container {
-  width: 60%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
 }
 
 .section2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 100px 0;
 }
 
 h2 {
-  font-family: "Electrolize";
-  font-size: 32px;
+    font-family: "Electrolize";
+    font-size: 32px;
 }
 
 footer {
-  position: absolute;
-  width: 100%;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: #fff;
-  height: 150px;
-  box-shadow: 0px 14px 24px 20px rgba(255, 0, 0, 0.27);
+    position: absolute;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #fff;
+    height: 150px;
+    box-shadow: 0px 14px 24px 20px rgba(255, 0, 0, 0.27);
 }
 
 .footer-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .footer-left a {
-  text-decoration: none;
-  letter-spacing: 1px;
-  font-weight: 400;
-  color: #fff;
-  background-color: red;
-  font-family: "Road Rage";
-  padding: 5px 10px;
-  border-radius: 5px;
-  text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #fff;
+    background-color: red;
+    font-family: "Road Rage";
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .footer-left p {
-  color: gray;
-  font-family: "Electrolize";
+    color: gray;
+    font-family: "Electrolize";
 }
 
 .footer-center ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  font-family: "Electrolize";
-  list-style-type: none;
-  height: 100%;
-  font-size: 24px;
-  color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: "Electrolize";
+    list-style-type: none;
+    height: 100%;
+    font-size: 24px;
+    color: #000;
 }
 
 .footer-center li a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .footer-center li a:visited {
-  color: #000;
+    color: #000;
 }
 
 .footer-right {
-  font-size: 24px;
-  font-family: "Electrolize";
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+    font-size: 24px;
+    font-family: "Electrolize";
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .footer-right a {
-  color: gray;
+    color: gray;
 }
 
 .icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 120%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .icons img {
-  height: 30px;
-  width: 30px;
+    height: 30px;
+    width: 30px;
 }
 
 /* CATEGORIES PAGE */
 
 .sectionCate {
-  background-image: url(./assets/bg_cate_jeux.jpg);
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: self-end;
-  z-index: 4;
+    background-image: url(./assets/bg_cate_jeux.jpg);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: self-end;
+    z-index: 4;
 }
 
 .cate_name {
-  font-family: "Electrolize";
-  font-size: 48px;
-  margin-bottom: 30px;
-  color: #fff;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+    font-family: "Electrolize";
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 .game-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 0;
 }
 
 .game-card {
-  border-radius: 10px;
-  height: 230px;
-  width: 600px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #d9d9d9;
-  padding: 0.5rem;
-  gap: 20px;
-  text-decoration: none;
-  color: #000;
-  font-family: "Electrolize";
+    border-radius: 10px;
+    height: 230px;
+    width: 600px;    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9d9d9;
+    padding: 0.5rem;
+    gap: 20px;
+    text-decoration: none;
+    color: #000;
+    font-family: "Electrolize";
 }
 
 .game-card img {
-  height: 100%;
-  width: auto;
-  border-radius: 10px;
+    height: 100%;
+    width: auto;
+    border-radius: 10px;
 }
 
 .card-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 400px;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 400px;
+    height: 100%;
 }
 
 .article-info {
-  display: flex;
-  flex-direction: column;
-  align-items: self-end;
-  text-align: right;
-  font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: self-end;
+    text-align: right;
+    font-size: 12px;
 }
 
 .game-info {
-  height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .game-info p:first-child {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .card-info p:last-child {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 /* GAME PAGE */
 
 .game-section {
-  background-color: #fff;
-  padding: 50px;
-  width: 60%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 30px;
-  border-radius: 10px;
-  border: red 3px solid;
-  font-family: "Electrolize";
-  z-index: 3;
+    background-color: #fff;
+    padding: 50px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    border-radius: 10px;
+    border: red 3px solid;
+    font-family: "Electrolize";
+    z-index: 3;
 }
 
 .game-section img {
-  height: 400px;
-  width: auto;
+    height: 400px;
+    width: auto;
 }
 
 .card-info2 {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .game-info2 {
-  height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
 }
 
 .game_photo {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .game_photo img {
-  width: 230px;
-  height: auto;
-  cursor: pointer;
+    width: 230px;
+    height: auto;
+    cursor: pointer;
 }
 
 .game-container2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
 }
 
 .desc {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.overlay {
-  display: none;
-  position: absolute;
-  background-color: #0000007e;
-  width: 100%;
-  height: 100%;
-  z-index: 7;
-  backdrop-filter: blur(10px);
-}
-.modal {
-  display: none;
-  left: 15%;
-  top: 10%;
-  width: 1366px;
-  height: 768px;
-  z-index: 8;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-}
-
-.suppr {
-  display: none;
-  left: 25%;
-  top: 25%;
-  width: 800px;
-  height: 500px;
-  z-index: 8;
-  position: absolute;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  border: 1px gray solid;
-}
-
-.active {
-  display: flex;
-}
-.slider {
-  width: 1366px;
-  height: 768px;
-  position: relative;
-}
-
-.slider_nav_next {
-  right: 20px;
-}
-
-.slider_nav_prev {
-  left: 20px;
-}
-.slider_nav_button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  background: none;
-  border: 0;
-  transition: 0.3s all ease-in-out;
-}
-
-.slider_nav_button:hover {
-  transform: translateY(-50%) scale(1.1);
-}
-
-.slider_nav_button svg {
-  width: 50px;
-  height: 50px;
-}
-.slider_nav_button svg path {
-  stroke: white;
-}
-
-.slider_content {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  overflow: hidden;
-  scroll-behavior: smooth;
-}
-
-.slider_content_item {
-  height: 100%;
-  min-width: 100%;
-}
-
-.slider_content_item img {
-  height: 100%;
-  width: 100%;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 /* REGISTER PAGE */
 .form-box {
-  display: flex;
-  width: 60%;
-  z-index: 2;
-  height: 50vh;
+    display: flex;
+    width: 60%;
+    z-index: 2;
+    height: 50vh;
 }
 
 .form-value {
-  width: 350px;
-  display: flex;
-  height: 50vh;
-  border-radius: 15px;
-  background-color: #fff;
-  justify-content: center;
-  align-items: center;
-  box-shadow: -12px 11px 15px -5px rgba(0, 0, 0, 0.61);
+    width: 350px;
+    display: flex;
+    height: 50vh;
+    border-radius: 15px;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -12px 11px 15px -5px rgba(0, 0, 0, 0.61);
 }
 
 .connect {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .formlogo {
-  padding-top: 5%;
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
+    padding-top: 5%;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .formlogo img {
-  height: 25px;
+    height: 25px;
 }
 
 .connect input[type="text"],
 .connect input[type="email"],
 .connect input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-bottom: 1px solid red;
-  outline: none;
-  font-family: "Electrolize";
-  font-size: 1rem;
-  margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid red;
+    outline: none;
+    font-family: "Electrolize";
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
 
 .connect input[type="submit"] {
-  background-color: red;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-family: "Electrolize";
-  font-size: 1rem;
-  cursor: pointer;
+    background-color: red;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Electrolize";
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .connect input[type="submit"]:hover {
-  background-color: rgb(130, 0, 0);
+    background-color: rgb(130, 0, 0);
 }
 
 .connect label {
-  font-family: "Electrolize";
-  font-size: 1rem;
-  font-weight: bold;
+    font-family: "Electrolize";
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .connect h2 {
-  text-align: center;
-  font-size: 1rem;
-  padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px;
 }
 
 #warning {
-  font-size: 0.8rem;
-  font-family: "Electrolize";
+    font-size: 0.8rem;
+    font-family: "Electrolize";
 }
 
 .register p {
-  text-align: center;
-  color: #333;
-  font-family: "Electrolize";
-  font-size: 1rem;
+    text-align: center;
+    color: #333;
+    font-family: "Electrolize";
+    font-size: 1rem;
 }
 
 .register a {
-  color: #000;
-  text-decoration: none;
+    color: #000;
+    text-decoration: none;
 }
 
 /* END REGISTER PAGE */
 
+
+
+
 /* Mobile */
 @media only screen and (max-width: 615px) {
-  .form-box {
-    width: auto;
-  }
+    .form-box {
+        width: auto;
+    }
 
-  nav {
-    width: 350px;
-  }
+    header {
+        top: 25px;
+    }
 
-  nav a {
-    font-size: 10px;
-  }
+    nav {
+        width: 350px;
+        height: 50px;
+    }
 
-  footer {
-    display: none;
-  }
+    nav a {
+        font-size: 10px;
+    }
+
+    .intro {
+        font-family: "Electrolize";
+        font-size: 30px;
+        text-align: left; 
+        margin-top: 20%; 
+        margin-right: 25%;             
+        padding:0;        
+        width: 225px;
+    }
+
+    video{
+        height: 50vh;
+    }
+
+    .section1 {
+        height: 50vh;
+    }
+
+    .section2 {
+        padding: 50px 0;
+    }
+    .cate-container {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .round:nth-child(2) div:nth-child(1) {
+        border-radius: 0 10px 0 0;
+    }
+    
+    .round:nth-child(3) div:nth-child(1) {
+        border-radius: 0 0 0 0;
+    }
+    
+    .round:nth-child(4) div:nth-child(1) {
+        border-radius: 0 0 0 0;
+    }
+
+    .round:nth-child(5) div:nth-child(1) {
+        border-radius: 0 0 0 10px;
+    }
+    
+    .round:nth-child(6) div:nth-child(1) {
+        border-radius: 0 0 10px 0;
+    }
+
+    footer {
+        justify-content: space-evenly;
+        margin-top: 0; 
+        gap: 5%;  
+        padding-left: 5%;  
+        padding-right: 5%;           
+    }
+
+    .footer-left{
+        padding: 1%;
+        width: 40%;
+    }
+
+    .footer-left a{
+        font-size: 10px;        
+    }
+
+    .footer-left p{
+        font-size: 12px;
+    }
+
+    .footer-center{
+        padding: 1%;
+        width: 20%;
+    }
+
+    .footer-center ul{
+        font-size: 12px;
+    }
+
+    .footer-right{
+        padding: 1%;
+        width: 40%;
+    }
+
+    .footer-right p, .footer-right a{
+        font-size: 15px;
+    }
+
+    .footer-right img {
+        height: 15px;
+        width: 15px;
+    }
+
+
 }
 
 /* Tablettes */
 @media only screen and (min-width: 616px) and (max-width: 1024px) {
+     
 }
