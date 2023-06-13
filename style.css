@@ -274,7 +274,6 @@ footer {
   border-radius: 10px;
   height: 230px;
   width: 600px;
-  margin-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -596,7 +595,4 @@ footer {
 
 /* Tablettes */
 @media only screen and (min-width: 616px) and (max-width: 1024px) {
-  footer {
-    display: none;
-  }
 }
