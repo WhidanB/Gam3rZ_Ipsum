@@ -237,7 +237,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 120%;
+    width: 100%;
 }
 
 .icons img {
@@ -270,13 +270,14 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 30px;
+    padding: 30px 0;
 }
 
 .game-card {
     border-radius: 10px;
     height: 230px;
-    width: 600px;
-    margin-top: 30px;
+    width: 600px;    
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -494,22 +495,115 @@ footer {
         width: auto;
     }
 
+    header {
+        top: 25px;
+    }
+
     nav {
         width: 350px;
+        height: 50px;
     }
 
     nav a {
         font-size: 10px;
     }
 
-    footer {
-        display: none;
+    .intro {
+        font-family: "Electrolize";
+        font-size: 30px;
+        text-align: left; 
+        margin-top: 20%; 
+        margin-right: 25%;             
+        padding:0;        
+        width: 225px;
     }
+
+    video{
+        height: 50vh;
+    }
+
+    .section1 {
+        height: 50vh;
+    }
+
+    .section2 {
+        padding: 50px 0;
+    }
+    .cate-container {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .round:nth-child(2) div:nth-child(1) {
+        border-radius: 0 10px 0 0;
+    }
+    
+    .round:nth-child(3) div:nth-child(1) {
+        border-radius: 0 0 0 0;
+    }
+    
+    .round:nth-child(4) div:nth-child(1) {
+        border-radius: 0 0 0 0;
+    }
+
+    .round:nth-child(5) div:nth-child(1) {
+        border-radius: 0 0 0 10px;
+    }
+    
+    .round:nth-child(6) div:nth-child(1) {
+        border-radius: 0 0 10px 0;
+    }
+
+    footer {
+        justify-content: space-evenly;
+        margin-top: 0; 
+        gap: 5%;  
+        padding-left: 5%;  
+        padding-right: 5%;           
+    }
+
+    .footer-left{
+        padding: 1%;
+        width: 40%;
+    }
+
+    .footer-left a{
+        font-size: 10px;        
+    }
+
+    .footer-left p{
+        font-size: 12px;
+    }
+
+    .footer-center{
+        padding: 1%;
+        width: 20%;
+    }
+
+    .footer-center ul{
+        font-size: 12px;
+    }
+
+    .footer-right{
+        padding: 1%;
+        width: 40%;
+    }
+
+    .footer-right p, .footer-right a{
+        font-size: 15px;
+    }
+
+    .footer-right img {
+        height: 15px;
+        width: 15px;
+    }
+
+
 }
 
 /* Tablettes */
 @media only screen and (min-width: 616px) and (max-width: 1024px) {
-     footer {
-        display: none;
-    }
+     
 }
