@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 $_GET["search"];
 
@@ -27,6 +27,9 @@ if (isset($_GET["search"]) && !empty($_GET["search"])) {
 <div class="game-container">
 
     <?php
+    if (empty($result)) {
+        echo "<h1 class='nogame'>Nous n'avons pas trouvé de jeu correspondant à votre recherche...</h1>";
+    }
     //pour chaque résultat de $result, on affiche une ligne dans le tableau
     foreach ($result as $jeu) {
         // print_r($stagiaire);
