@@ -66,6 +66,6 @@ include "navbar.php";
         </div>
     </section>
 
-    <script src="passwordcheck.js"></script>
+    <script src="burger.js"></script>
     <script src="search.js"></script>
     <?php include_once("footer.php"); ?>

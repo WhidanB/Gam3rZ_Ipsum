@@ -2,14 +2,21 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const screen = document.querySelectorAll(".screen");
 
-let NTMsalechieng = window.innerWidth;
+let width = window.innerWidth;
 
-console.log(NTMsalechieng);
+window.addEventListener("resize", () => {
+  console.log(window.innerWidth);
+  width = window.innerWidth;
+});
+
+console.log(width);
 
 screen.forEach((event) =>
   event.addEventListener("click", () => {
-    overlay.classList.toggle("active");
-    modal.classList.toggle("active");
+    if (width > 615 === true) {
+      overlay.classList.toggle("active");
+      modal.classList.toggle("active");
+    }
   })
 );
 
@@ -56,3 +63,15 @@ function next() {
     document.querySelector(".slider_nav_prev").style.display = "block";
   }
 }
+
+//Menu burger
+
+const burger = document.querySelector(".burger");
+const context = document.querySelector(".context");
+
+console.log(burger);
+console.log(context);
+
+burger.addEventListener("click", () => {
+  context.classList.toggle("active");
+});
