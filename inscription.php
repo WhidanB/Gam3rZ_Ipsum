@@ -56,7 +56,9 @@ include "navbar.php";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $title ?></title>
+    <link rel="stylesheet" href="./fonts/stylesheet.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
 </head>
 
 <body>
@@ -120,6 +122,7 @@ include "navbar.php";
         </div>
     </footer>
     <script src="passwordcheck.js"></script>
+    <script src="burger.js"></script>
 </body>
 
 </html>

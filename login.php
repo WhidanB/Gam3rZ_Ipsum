@@ -63,6 +63,7 @@ $title = "login";
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="stylesheet" href="./fonts/stylesheet.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
 
 </head>
 
@@ -108,5 +109,6 @@ $title = "login";
 
 
     </section>
+    <script src="burger.js"></script>
     <script src="passwordcheck.js"></script>
     <?php include_once("footer.php"); ?>
