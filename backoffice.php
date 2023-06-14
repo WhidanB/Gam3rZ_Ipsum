@@ -15,7 +15,6 @@ if (!isset($_SESSION["user"])) {
         $query = $db->prepare($sql);
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
-        echo "<a href='users.php'>Utilisateurs</a>";
     } else
     if ($_SESSION["user"]["role"] == "user") {
         $name = $_SESSION["user"]["pseudo"];
@@ -26,7 +25,7 @@ if (!isset($_SESSION["user"])) {
     }
 
     $title = "BackOffice";
-    include "header.php";
+    include("headerAdd.php");
 }
 ?>
 
@@ -34,47 +33,55 @@ if (!isset($_SESSION["user"])) {
 <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<a href="add.php" class="d-flex justify-content-center align-items-center">Ajouter un jeu</a>
 
 
 
 
+<div class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center">
+    <nav class="d-flex flex-row align-items-center">
+        <?php
+        if ($_SESSION["user"]["role"] == "admin") {
+            echo "<a class='btn btn-primary'  href='users.php'>Gestion des utilisateurs</a>";
+        }
 
-<div class="container-fluid  d-flex justify-content-center align-items-center">
-    <div class="col-2">
-        <table class="border">
-            <thead>
+        ?>
+        <a class="btn btn-primary" href="index.php">Accueil</a>
+    </nav>
 
-                <th class="p-2 text-center border border-black text-white bg-dark">Jeu</th>
-                <th class="p-2 text-center border border-black text-white bg-dark">Catégorie</th>
-                <th class="p-2 text-center border border-black text-white bg-dark">Ajouté par</th>
-                <th class="p-2 text-center border border-black text-white bg-dark">Actions</th>
-            </thead>
-            <?php
-            foreach ($result as $jeu) {
-            ?>
+    <a href="add.php" class="d-flex justify-content-center align-items-center">Ajouter un jeu</a>
+    <table class="border">
+        <thead>
 
-                <tr>
-                    <td class="px-2 text-center border border-black"><?= $jeu["game_name"] ?></td>
-                    <td class="px-2 text-center border border-black"><?= $jeu["cate_name"] ?></td>
-                    <td class="px-2 text-center border border-black"><?= $jeu["user_name"] ?></td>
-                    <td class="text-center border border-black">
-                        <div class="btn-group">
+            <th class="p-2 text-center border border-black text-white bg-dark">Jeu</th>
+            <th class="p-2 text-center border border-black text-white bg-dark">Catégorie</th>
+            <th class="p-2 text-center border border-black text-white bg-dark">Ajouté par</th>
+            <th class="p-2 text-center border border-black text-white bg-dark">Actions</th>
+        </thead>
+        <?php
+        foreach ($result as $jeu) {
+        ?>
 
-                            <a href="edit.php?id=<?= $jeu['game_id'] ?>" aria-label="Close" class="btn btn-primary active">Éditer
-                            </a>
-                            <button data-id="<?= $jeu["game_id"] ?>" type="button" class="btn btn-primary delBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Supprimer</button>
+            <tr>
+                <td class="px-2 text-center border border-black"><?= $jeu["game_name"] ?></td>
+                <td class="px-2 text-center border border-black"><?= $jeu["cate_name"] ?></td>
+                <td class="px-2 text-center border border-black"><?= $jeu["user_name"] ?></td>
+                <td class="text-center border border-black">
+                    <div class="btn-group">
 
-                        </div>
-                    </td>
-                </tr>
+                        <a href="edit.php?id=<?= $jeu['game_id'] ?>" aria-label="Close" class="btn btn-primary active">Éditer
+                        </a>
+                        <button data-id="<?= $jeu["game_id"] ?>" type="button" class="btn btn-primary delBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Supprimer</button>
 
-            <?php
-            };
+                    </div>
+                </td>
+            </tr>
 
-            ?>
-        </table>
-    </div>
+        <?php
+        };
+
+        ?>
+    </table>
+
 </div>
 
 

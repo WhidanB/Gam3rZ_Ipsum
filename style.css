@@ -467,6 +467,7 @@ footer {
   width: 1366px;
   height: 768px;
   position: relative;
+  border: white 5px solid;
 }
 
 .slider_nav_next {
