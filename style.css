@@ -9,8 +9,11 @@
 body {
   box-sizing: border-box;
   background-color: #f6f6f6;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 header {
@@ -21,6 +24,30 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.search_bar {
+  display: flex;
+  align-items: center;
+  /* border: 1px gray solid; */
+  border-radius: 5px;
+  padding: 5px;
+  gap: 5px;
+  background-color: red;
+}
+
+.search_bar svg path {
+  stroke: #fff;
+}
+
+.search {
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  padding-left: 2%;
+}
+.search:focus {
+  outline: none;
 }
 
 nav {
@@ -41,6 +68,14 @@ nav {
   font-family: "Road Rage";
 }
 
+.logo:hover {
+  background-color: #a4090d;
+}
+
+nav div a:hover {
+  background-color: #a4090d;
+}
+
 nav a {
   text-decoration: none;
   color: #fff;
@@ -53,7 +88,6 @@ nav a {
 }
 
 video {
-  height: 100%;
   width: 100vw;
   object-fit: cover;
   position: absolute;
@@ -168,9 +202,8 @@ h2 {
 }
 
 footer {
-  position: absolute;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -260,6 +293,7 @@ footer {
   font-family: "Electrolize";
   font-size: 48px;
   margin-bottom: 30px;
+  text-align: center;
   color: #fff;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -283,7 +317,7 @@ footer {
   justify-content: center;
   align-items: center;
   background-color: #d9d9d9;
-  padding: 0.5rem;
+  padding: 0.8rem;
   gap: 20px;
   text-decoration: none;
   color: #000;
@@ -293,7 +327,6 @@ footer {
 .game-card img {
   height: 100%;
   width: auto;
-  border-radius: 10px;
 }
 
 .card-info {
