@@ -2,6 +2,10 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const screen = document.querySelectorAll(".screen");
 
+let NTMsalechieng = window.innerWidth;
+
+console.log(NTMsalechieng);
+
 screen.forEach((event) =>
   event.addEventListener("click", () => {
     overlay.classList.toggle("active");

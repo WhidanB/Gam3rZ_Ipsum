@@ -686,6 +686,97 @@ footer {
     border-radius: 0 0 10px 0;
   }
 
+  /* CATEGORIE PAGE */
+  .game-card {
+    width: 90vw;
+  }
+
+  /* GAME PAGE */
+  .game-section {
+    flex-direction: column;
+    width: 90vw;
+  }
+
+  .card-info2 {
+    gap: 30px;
+  }
+
+  .game-section img {
+    height: 300px;
+  }
+  .game_photo {
+    flex-direction: column;
+  }
+  .game_photo img {
+    height: 150px;
+  }
+
+  .active {
+    display: flex;
+  }
+
+  .modal {
+    display: none;
+    width: 100vw;
+    height: auto;
+    z-index: 8;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+  }
+  .slider {
+    width: 100vw;
+    height: auto;
+    position: relative;
+    border: white 5px solid;
+  }
+
+  .slider_nav_next {
+    right: 20px;
+  }
+
+  .slider_nav_prev {
+    left: 20px;
+  }
+  .slider_nav_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: none;
+    border: 0;
+    transition: 0.3s all ease-in-out;
+  }
+
+  .slider_nav_button:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .slider_nav_button svg {
+    width: 50px;
+    height: 50px;
+  }
+  .slider_nav_button svg path {
+    stroke: white;
+  }
+
+  .slider_content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .slider_content_item {
+    height: 100%;
+    min-width: 100%;
+  }
+
+  .slider_content_item img {
+    height: 100%;
+    width: 100%;
+  }
   footer {
     justify-content: space-evenly;
     margin-top: 0;
