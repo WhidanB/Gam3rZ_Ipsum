@@ -33,7 +33,7 @@ header {
   border-radius: 5px;
   padding: 5px;
   gap: 5px;
-  background-color: red;  
+  background-color: red;
   transition: background-color 0.5s ease;
 }
 
@@ -70,12 +70,10 @@ nav {
 }
 
 .logo:hover {
-  
   background-color: #a4090d;
 }
 
 nav div a:hover {
-  
   background-color: #a4090d;
 }
 
