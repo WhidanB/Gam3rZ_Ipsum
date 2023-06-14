@@ -14,12 +14,12 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
 }
 $title = $result[0]["game_name"];
-$sql = "SELECT images FROM screenshots WHERE game = '$title'";
+$sql = "SELECT * FROM screenshots WHERE game = '$title'";
 $query = $db->prepare($sql);
 $query->execute();
 $image = $query->fetchAll(PDO::FETCH_ASSOC);
 
-$sql = "SELECT images FROM screenshots WHERE game = '$title'";
+$sql = "SELECT * FROM screenshots WHERE game = '$title'";
 $query = $db->prepare($sql);
 $query->execute();
 $screen = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -96,7 +96,7 @@ include("navbar.php");
 
                     ?>
 
-                        <img class="screen" src="<?= $screen["images"] ?>" alt="">
+                        <img data-id="<?= $screen["id"] ?>" class="screen" src="<?= $screen["images"] ?>" alt="">
                     <?php } ?>
                 </div>
             </div>
