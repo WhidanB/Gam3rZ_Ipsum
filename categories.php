@@ -70,5 +70,5 @@ include("navbar.php"); ?>
 
     ?>
 </div>
-
+<script src="search.js"></script>
 <?php include_once("footer.php"); ?>

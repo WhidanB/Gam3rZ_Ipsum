@@ -33,7 +33,8 @@ header {
   border-radius: 5px;
   padding: 5px;
   gap: 5px;
-  background-color: red;
+  background-color: red;  
+  transition: background-color 0.5s ease;
 }
 
 .search_bar svg path {
@@ -69,14 +70,17 @@ nav {
 }
 
 .logo:hover {
+  
   background-color: #a4090d;
 }
 
 nav div a:hover {
+  
   background-color: #a4090d;
 }
 
 nav a {
+  transition: background-color 0.5s ease;
   text-decoration: none;
   color: #fff;
   font-family: "Electrolize";
