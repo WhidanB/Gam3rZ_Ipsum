@@ -19,8 +19,12 @@ include("headerAdd.php");
 ?>
 
 
-<section class="w-100 h-100 container-fluid d-flex flex-column justify-content-center align-items-center">
-    <h1>Table des utilisateurs</h1>
+<section class="container container-fluid d-flex flex-column justify-content-center align-items-center">
+    <h1 class="m-2">Table des utilisateurs</h1>
+    <div class="m-2 container-fluid col-xl-4 cl-md-8 col-xs-12">
+        <a class="btn btn-primary" href="index.php">Accueil</a>
+        <a class="btn btn-primary" href='backoffice.php'>Backoffice</a>
+        </div>
     <table class="border">
         <th class="p-2 text-center border border-black text-white bg-dark">Pseudo</th>
         <th class="p-2 text-center border border-black text-white bg-dark">Adresse mail</th>

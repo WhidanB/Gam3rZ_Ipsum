@@ -139,6 +139,10 @@ include("headerAdd.php");
 <div class="container container-fluid d-flex justify-content-center align-items-center">
     <div class="col-8">
         <h1 class="text-center">Modifier un jeu</h1>
+        <div class="container-fluid col-xl-4 cl-md-8 col-xs-12">
+        <a class="btn btn-primary" href="index.php">Accueil</a>
+        <a class="btn btn-primary" href='backoffice.php'>Backoffice</a>
+        </div>
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="game_name">Nom du jeu</label><input name="game_name" value="<?= $result["game_name"] ?>" type="text" class="form-control" required>

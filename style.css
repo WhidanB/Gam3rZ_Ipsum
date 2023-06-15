@@ -886,6 +886,29 @@ footer {
   }
 }
 
+@media only screen and (max-width: 800px) {
+    .btn-primary {
+      padding: 0.5rem 0.5rem !important;
+      font-size: 0.7rem !important;
+    }
+    
+    table {
+      font-size: 0.7rem ;
+    }
+  }
+
+  
+@media only screen and (max-width: 420px) {
+    .btn-primary {
+      padding: 0.25rem 0.5rem !important;
+      font-size: 0.7rem !important;
+    }
+    
+    table {
+      font-size: 0.7rem ;
+    }
+  }
+
 /* Tablettes */
 @media only screen and (min-width: 616px) and (max-width: 1024px) {
 }
