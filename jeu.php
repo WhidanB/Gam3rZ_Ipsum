@@ -90,23 +90,18 @@ include("navbar.php");
                     <p><span class="desc">Description :</span><?= " " . $jeu['game_desc'] ?></p>
                     <p>Date de sortie: <?= $jeu['game_date'] ?> </p>
                 </div>
-                <div class="game_photo">
-                    <?php
-                    foreach ($screen as $screen) {
-
-                    ?>
-
-                        <img data-id="<?= $screen["id"] ?>" class="screen" src="<?= $screen["images"] ?>" alt="">
-                    <?php } ?>
-                </div>
             </div>
+            <div class="game_photo">
+                <?php
+                foreach ($screen as $screen) {
+
+                ?>
+
+                    <img data-id="<?= $screen["id"] ?>" class="screen" src="<?= $screen["images"] ?>" alt="">
+                <?php } ?>
+            </div>
+
         </section>
-
-
-
-
-
-
 
     <?php
     };
