@@ -13,7 +13,7 @@ console.log(width);
 
 screen.forEach((event) =>
   event.addEventListener("click", () => {
-    if (width > 615 === true) {
+    if (width > 615) {
       overlay.classList.toggle("active");
       modal.classList.toggle("active");
     }

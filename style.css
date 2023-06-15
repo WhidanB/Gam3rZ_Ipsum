@@ -753,11 +753,12 @@ footer {
   }
 
   .card-info2 {
-    gap: 30px;
+    gap: 40px;
+    height: auto;
   }
 
   .game-section img {
-    width: 80%;
+    width: 100%;
     height: auto;
   }
   .game_photo {
@@ -766,8 +767,8 @@ footer {
     gap: 5px;
   }
   .game_photo img {
-    height: 113px;
-    width: 200px;
+    height: auto;
+    width: 100%;
   }
 
   .active {
