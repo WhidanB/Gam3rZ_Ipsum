@@ -417,6 +417,9 @@ footer {
 }
 
 .game_photo img {
+  height: auto;
+  width: 320px;
+
   cursor: pointer;
 }
 
