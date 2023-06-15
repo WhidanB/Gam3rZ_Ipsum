@@ -70,5 +70,6 @@ include("navbar.php"); ?>
 
     ?>
 </div>
+<script src="burger.js"></script>
 <script src="search.js"></script>
 <?php include_once("footer.php"); ?>
