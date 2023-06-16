@@ -3,6 +3,7 @@ const overlay = document.querySelector(".overlay");
 const screen = document.querySelectorAll(".screen");
 
 let width = window.innerWidth;
+let height = window.innerHeight;
 
 window.addEventListener("resize", () => {
   console.log(window.innerWidth);
@@ -10,6 +11,7 @@ window.addEventListener("resize", () => {
 });
 
 console.log(width);
+console.log(height);
 
 screen.forEach((event) =>
   event.addEventListener("click", () => {
@@ -74,26 +76,4 @@ console.log(context);
 
 burger.addEventListener("click", () => {
   context.classList.toggle("active");
-});
-
-const swiper = new Swiper(".swiper", {
-  // Optional parameters
-  direction: "horizontal",
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
 });

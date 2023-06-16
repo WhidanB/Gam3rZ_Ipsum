@@ -81,7 +81,7 @@ include("navbar.php");
             <img src="<?= $jeu['game_cover'] ?>" alt="">
             <div class="card-info2">
 
-                <div class="article-info">
+                <div class="article-info2">
                     <p>Article ajouté le <?= $jeu["added"] ?></p>
                     <p>Par <?= $jeu["user_name"] ?></p>
                 </div>

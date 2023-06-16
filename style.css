@@ -355,6 +355,14 @@ footer {
   font-size: 12px;
 }
 
+.article-info2 {
+  display: flex;
+  flex-direction: column;
+  align-items: self-end;
+  text-align: right;
+  font-size: 12px;
+}
+
 .game-info {
   height: 180px;
   display: flex;
@@ -449,7 +457,7 @@ footer {
 .modal {
   display: none;
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 1366px;
@@ -1255,6 +1263,57 @@ footer {
 
   .sectionCate {
     height: 200px;
+  }
+}
+
+@media screen and (width: 3840px) {
+  /* GAME PAGE */
+
+  .sectionCate {
+    height: 20vh;
+  }
+
+  .game-section {
+    width: 60vw;
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    grid-template-rows: 1fr 300px;
+    gap: 30px;
+  }
+
+  .card-info2 {
+    font-size: 28px;
+    width: 100%;
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .article-info2 {
+    font-size: 28px;
+    display: flex;
+  }
+
+  .game-section > img:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    height: auto;
+  }
+
+  .game_photo img {
+    width: 33%;
+    height: auto;
+  }
+
+  .active {
+    display: flex;
+  }
+
+  .sectionCate {
+    height: 20vh;
   }
 }
 
