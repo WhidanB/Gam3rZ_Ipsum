@@ -60,7 +60,7 @@ header {
 }
 
 nav {
-  border-radius: 15px;
+  border-radius: 1rem;
   height: 70px;
   width: 60%;
   display: flex;
@@ -75,6 +75,7 @@ nav {
 
 .logo {
   font-family: "Road Rage";
+  border-radius: 0.5rem;
 }
 
 .logo:hover {
@@ -107,6 +108,7 @@ video {
   bottom: 0;
   z-index: 1;
   box-shadow: 0px 0px 24px 20px rgba(255, 0, 0, 0.27);
+  height: 85vh;
 }
 
 .intro {
@@ -126,7 +128,7 @@ video {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 97vh;
+  height: 85vh;
 }
 
 .categorie {
@@ -203,7 +205,7 @@ video {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  padding: 100px 0;
+  padding: 40px 0;
 }
 
 h2 {
@@ -213,13 +215,14 @@ h2 {
 
 footer {
   width: 100%;
-  margin-top: 100px;
+  margin-top: 75px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   background-color: #fff;
   height: 150px;
   box-shadow: 0px 14px 24px 20px rgba(255, 0, 0, 0.27);
+  gap: 10%;
 }
 
 .footer-left {
@@ -1201,6 +1204,181 @@ footer {
   }
 }
 
-/* Tablettes */
-@media only screen and (min-width: 81px) and (max-width: 1844px) {
+
+
+/* 1921 to 3440 responsive */
+@media only screen and (min-width: 1921px)  {
+
+    /* INDEX */
+    nav {
+        width: 50%;
+        height: 100px;
+    }
+
+    .intro {
+        width: 55%;
+    }
+
+    .logo{
+        height: 60px;
+        width: 350px;
+        font-size: 30px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_bar {
+        height: 60px;
+        width: 100%;
+        font-size: 40px;
+        border-radius: 0.5rem;
+    }
+    body > header > nav > form > div > svg{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .search {
+        width: 80%;
+        height: 40px;        
+        font-size: 30px;
+    }
+
+    .liens {
+        display: flex;
+        flex-direction: row;
+        gap: 5%;
+    }
+
+    nav a {
+        height: 60px;
+        width: 225px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;        
+    }
+
+    .intro {
+        font-size: 6rem;
+    }
+
+    video, .section1 {
+        height: 85vh;
+    }
+
+    h2{
+        font-size: 4rem;
+    }      
+
+    .categorie {
+        height: 350px;
+    }
+
+    footer {        
+        justify-content: center;
+        gap: 10%;        
+        height: 15vh;
+    }
+    
+    body > footer > div.footer-left > a{
+        height: 60px;
+        width: 350px;
+        font-size: 30px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-left p{
+        font-size: 2rem;
+    }
+
+    .footer-center ul li{
+        font-size: 3rem;
+    }
+
+    .footer-right p, .footer-right a{
+        font-size: 3rem;
+    } 
+
+    .footer-right img{
+        height: 50px;
+        width: 50px;
+    }
+    /* END INDEX */
+
+    /* LOGIN REGISTER */
+    .form-box {
+       width: 50%; 
+    }
+
+    .form-value {
+       width: 600px;
+    }
+
+    .connect h2{
+        font-size: 3rem;
+    }
+
+    .connect label{
+        font-size: 2rem;
+    }
+    
+    .connect input[type="text"],
+    .connect input[type="email"],
+    .connect input[type="password"], #warning{
+        font-size: 1.5rem;
+    }
+
+    .connect input[type="submit"]{
+        font-size: 2rem;
+    }
+
+    .formlogo img {
+        height: 50px;
+    }
+
+    .register p{
+        font-size: 1.5rem;
+    }
+    
+
+
+    /* END LOGIN REGISTER */
+
+    
+   
 }
+
+/* END 1921 to 3440 responsive */
+
+
+
+/* 3440+ responsive */
+@media screen and (min-width: 3441px) {
+    .section1 {
+        height: 60vh;
+    }
+
+    video {
+        height: 60vh;
+    }
+
+    .video2 {
+        height: 85vh;
+    }
+
+    .form-value{
+        margin-top: 15%;   
+    }
+
+
+}
+
+/* END 1440+ responsive */

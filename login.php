@@ -70,7 +70,7 @@ $title = "login";
 <body>
     <?php include "navbar.php"; ?>
     <section class="section1">
-        <video autoplay loop muted>
+        <video class="video2" autoplay loop muted>
             <source src="./assets/main.mp4">
         </video>
         <div class="form-box">

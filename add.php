@@ -150,7 +150,7 @@ include "headerAdd.php";
 
             <div class="custom-file">
                 <input type="file" name="fileUpload[]" class="custom-file-input" id="chooseFile" multiple>
-                <label class="custom-file-label" for="chooseFile">Upload</label>
+                <label class="custom-file-label" for="chooseFile">3 Screenshots max</label>
             </div>
             <div class="container imgGallery">
                 <!-- image preview -->
