@@ -3,6 +3,7 @@ const overlay = document.querySelector(".overlay");
 const screen = document.querySelectorAll(".screen");
 
 let width = window.innerWidth;
+let height = window.innerHeight;
 
 window.addEventListener("resize", () => {
   console.log(window.innerWidth);
@@ -10,6 +11,7 @@ window.addEventListener("resize", () => {
 });
 
 console.log(width);
+console.log(height);
 
 screen.forEach((event) =>
   event.addEventListener("click", () => {
