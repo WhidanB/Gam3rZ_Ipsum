@@ -73,6 +73,14 @@ nav {
   box-shadow: -12px 11px 15px -5px rgba(0, 0, 0, 0.61);
 }
 
+.liens {
+    gap: 1%;
+}
+
+body > header > nav > a {
+    margin-right: 1%;
+}
+
 .logo {
   font-family: "Road Rage";
   border-radius: 0.5rem;
@@ -95,7 +103,7 @@ nav a {
   padding: 5px 10px;
   border-radius: 5px;
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: 500;  
 }
 
 video {
@@ -338,8 +346,7 @@ footer {
 }
 
 .game-card img {
-  height: 100%;
-  width: 30%;
+  height: 100%;  
 }
 
 .card-info {
@@ -702,7 +709,7 @@ footer {
   }
 
   nav a {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .intro {
