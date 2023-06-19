@@ -26,7 +26,6 @@ if (!isset($_SESSION["user"])) {
 
     $title = "BackOffice";
     include "headerAdd.php";
-    include "headerAdd.php";
 }
 ?>
 
@@ -44,7 +43,7 @@ if (!isset($_SESSION["user"])) {
     <a href="add.php" class="d-flex justify-content-center align-items-center btn btn-primary">Ajouter un jeu</a>
     <a class="btn btn-primary" href="index.php">Accueil</a>
 </nav>
-<div class="container-fluid col-md-6 d-flex flex-column justify-content-center align-items-center mt-5">    
+<div class="container-fluid col-md-6 d-flex flex-column justify-content-center align-items-center mt-5">
 
     <div class="table-responsive">
         <table class="table">
