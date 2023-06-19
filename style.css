@@ -1285,7 +1285,7 @@ footer {
   }
 
   .card-info2 {
-    font-size: 28px;
+    font-size: 38px;
     width: 100%;
     grid-row: 1;
     grid-column: 2;
@@ -1295,7 +1295,7 @@ footer {
   }
 
   .article-info2 {
-    font-size: 28px;
+    font-size: 35px;
     display: flex;
   }
 
@@ -1492,12 +1492,53 @@ footer {
 
     .register p{
         font-size: 1.5rem;
-    }
-    
-
+    }  
 
     /* END LOGIN REGISTER */
 
+    /* CATEGORIE */
+
+    .game-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        justify-items: center;
+        width: 80%;
+        margin: auto;     
+    }    
+
+    .nogame {
+        grid-column: 2;
+    }
+    
+    .game-card {
+        height: 345px;
+        width: 900px;    
+        justify-content: space-around;         
+    }
+
+    .game-card p {
+        font-size: 1.8rem; 
+    }
+
+    .card-info p:last-child {
+        font-size: 2rem;
+    }
+    /* END CATEGORIE */
+
+    /* JEU */
+    .game-section{
+        font-size: 2rem;
+    }
+    
+    .article-info{
+        font-size: 2rem;
+    }
+
+    .article-info2{
+        font-size: 1.2rem;
+    }
+    /* END JEU */
     
    
 }
@@ -1524,7 +1565,10 @@ footer {
         margin-top: 15%;   
     }
 
+    
+    
+
 
 }
 
-/* END 1440+ responsive */
+/* END 3440+ responsive */
