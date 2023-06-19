@@ -14,7 +14,7 @@ if (!isset($_SESSION["user"])) {
         $sql = "SELECT * FROM games";
         $query = $db->prepare($sql);
         $query->execute();
-        $result = $query->fetchAll(PDO::FETCH_ASSOC);        
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
     } else
     if ($_SESSION["user"]["role"] == "user") {
         $name = $_SESSION["user"]["pseudo"];
@@ -25,7 +25,7 @@ if (!isset($_SESSION["user"])) {
     }
 
     $title = "BackOffice";
-    include "header.php";
+    include "headerAdd.php";
 }
 ?>
 
@@ -43,7 +43,7 @@ if (!isset($_SESSION["user"])) {
     <a href="add.php" class="d-flex justify-content-center align-items-center btn btn-primary">Ajouter un jeu</a>
     <a class="btn btn-primary" href="index.php">Accueil</a>
 </nav>
-<div class="container-fluid  d-flex flex-column justify-content-center align-items-center">    
+<div class="container-fluid  d-flex flex-column justify-content-center align-items-center">
 
     <div class="table-responsive">
         <table class="table">
